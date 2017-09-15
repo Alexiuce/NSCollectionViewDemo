@@ -1,2 +1,5 @@
-# NSCollectionViewDemo
-一个简单的NSCollectionView示例工程
+## NSCollectionViewDemo
+![](https://img.shields.io/badge/Platform-MacOSX-red.svg)
+![](https://img.shields.io/badge/Language-swift4.0-orange.svg)
+
+Cocoa工程仓库
