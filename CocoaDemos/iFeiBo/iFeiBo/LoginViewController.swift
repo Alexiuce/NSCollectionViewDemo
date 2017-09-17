@@ -24,7 +24,7 @@ class LoginViewController: NSViewController {
         
         homeWindowController.showWindow(nil)
         
-        
+      
         
         /*
          let loginURL = URL(string: kFBOAuth2URLPath)!
