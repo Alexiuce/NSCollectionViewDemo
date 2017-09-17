@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		53E28E0B43B7ADBEDE9CA297 /* Pods_iFeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D85735BAAADC54C6278F0A /* Pods_iFeiBo.framework */; };
+		D80A7C521F6E3F0E0023B175 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A7C511F6E3F0E0023B175 /* UserAccount.swift */; };
 		D87A1CE91F6CB32000F2D999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A1CE81F6CB32000F2D999 /* AppDelegate.swift */; };
 		D87A1CED1F6CB32000F2D999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87A1CEC1F6CB32000F2D999 /* Assets.xcassets */; };
 		D87A1CF01F6CB32000F2D999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87A1CEE1F6CB32000F2D999 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		26D85735BAAADC54C6278F0A /* Pods_iFeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EF7649B5B77774A69E2E3A /* Pods-iFeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFeiBo/Pods-iFeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		8112D1526EF802B7BF36A377 /* Pods-iFeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFeiBo/Pods-iFeiBo.release.xcconfig"; sourceTree = "<group>"; };
+		D80A7C511F6E3F0E0023B175 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		D87A1CE51F6CB32000F2D999 /* iFeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A1CE81F6CB32000F2D999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D87A1CEC1F6CB32000F2D999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				D87A1CE81F6CB32000F2D999 /* AppDelegate.swift */,
 				D87A1D001F6CCAA200F2D999 /* ConstantKey.swift */,
 				D87A1CF71F6CB3A200F2D999 /* LoginWindowController.swift */,
+				D80A7C511F6E3F0E0023B175 /* UserAccount.swift */,
 				D87A1CFB1F6CBD1600F2D999 /* LoginViewController.swift */,
 				D87A1CF91F6CB3B800F2D999 /* HomeWindowController.swift */,
 				D87A1CFD1F6CBD2B00F2D999 /* HomeViewController.swift */,
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80A7C521F6E3F0E0023B175 /* UserAccount.swift in Sources */,
 				D87A1CF81F6CB3A200F2D999 /* LoginWindowController.swift in Sources */,
 				D87A1CFA1F6CB3B800F2D999 /* HomeWindowController.swift in Sources */,
 				D87A1CFC1F6CBD1600F2D999 /* LoginViewController.swift in Sources */,
