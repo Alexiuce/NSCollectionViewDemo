@@ -23,6 +23,11 @@ let kFBOAuth2URLPath = ""
 
 // MARK: - weibo API URL
 
-let WBOAuth2URL = "https://api.weibo.com/oauth2/authorize?client_id=3847062016&scope=all&response_type=code&redirect_uri=http://alexiuce.github.io"
-let WBTokenURL = "https://api.weibo.com/oauth2/access_token?client_id=3847062016&client_secret=4ca2f345734b0453cb9c0212dae0228c&grant_type=authorization_code&redirect_uri=http://alexiuce.github.io&code="
+let WBAppID = "3847062016"
+let WBAppSecretKey = "4ca2f345734b0453cb9c0212dae0228c"
+let WBAppReDirectURL = "http://alexiuce.github.io"
+
+
+let WBOAuth2URL = "https://api.weibo.com/oauth2/authorize?client_id=\(WBAppID)&scope=all&response_type=code&redirect_uri=\(WBAppReDirectURL)"
+let WBTokenURL = "https://api.weibo.com/oauth2/access_token"
 

@@ -367,9 +367,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54EF7649B5B77774A69E2E3A /* Pods-iFeiBo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFeiBo/iFeiBo.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/**";
 				INFOPLIST_FILE = iFeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexiuce.iFeiBo;
@@ -382,9 +384,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8112D1526EF802B7BF36A377 /* Pods-iFeiBo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFeiBo/iFeiBo.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/**";
 				INFOPLIST_FILE = iFeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexiuce.iFeiBo;

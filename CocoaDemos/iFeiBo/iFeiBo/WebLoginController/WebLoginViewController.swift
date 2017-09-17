@@ -8,25 +8,27 @@
 
 import Cocoa
 import WebKit
+import Alamofire
 
 class WebLoginViewController: NSViewController {
 
     @IBOutlet weak var webView: WebView!
     
-    lazy var session = URLSession.shared
+    lazy var session = URLSession(configuration: URLSessionConfiguration.default)
     var dataTask : URLSessionDataTask!
     
     var codeForToken = "" {
         didSet{
             if codeForToken == oldValue {return}
+            let url = URL(string: WBTokenURL)!
+            let paraDict = ["client_id":WBAppID,"client_secret":WBAppSecretKey,"grant_type":"authorization_code",
+                            "code":codeForToken,"redirect_uri":WBAppReDirectURL]
             
-            let url = URL(string: WBTokenURL + codeForToken)!
-            dataTask = session.dataTask(with: url) { (data, response, error) in
-                guard let data = data else { return  }
-                
-                print("data = \(String(describing:  String(data: data, encoding: .utf8))); error = \(String(describing: error?.localizedDescription))")
+            Alamofire.request(url, method: .post, parameters: paraDict).responseJSON { (data) in
+                print(data)
             }
-            dataTask.resume()
+            
+            
             
         }
     }
