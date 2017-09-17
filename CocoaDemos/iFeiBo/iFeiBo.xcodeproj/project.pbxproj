@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53E28E0B43B7ADBEDE9CA297 /* Pods_iFeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D85735BAAADC54C6278F0A /* Pods_iFeiBo.framework */; };
 		D87A1CE91F6CB32000F2D999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A1CE81F6CB32000F2D999 /* AppDelegate.swift */; };
 		D87A1CED1F6CB32000F2D999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87A1CEC1F6CB32000F2D999 /* Assets.xcassets */; };
 		D87A1CF01F6CB32000F2D999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87A1CEE1F6CB32000F2D999 /* Main.storyboard */; };
@@ -20,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26D85735BAAADC54C6278F0A /* Pods_iFeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54EF7649B5B77774A69E2E3A /* Pods-iFeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFeiBo/Pods-iFeiBo.debug.xcconfig"; sourceTree = "<group>"; };
+		8112D1526EF802B7BF36A377 /* Pods-iFeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFeiBo/Pods-iFeiBo.release.xcconfig"; sourceTree = "<group>"; };
 		D87A1CE51F6CB32000F2D999 /* iFeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A1CE81F6CB32000F2D999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D87A1CEC1F6CB32000F2D999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,17 +44,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E28E0B43B7ADBEDE9CA297 /* Pods_iFeiBo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12DA964A2731AD5000FDCD7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26D85735BAAADC54C6278F0A /* Pods_iFeiBo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC1D9C521027BAD9E7E3EFE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54EF7649B5B77774A69E2E3A /* Pods-iFeiBo.debug.xcconfig */,
+				8112D1526EF802B7BF36A377 /* Pods-iFeiBo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D87A1CDC1F6CB32000F2D999 = {
 			isa = PBXGroup;
 			children = (
 				D87A1CE71F6CB32000F2D999 /* iFeiBo */,
 				D87A1CE61F6CB32000F2D999 /* Products */,
+				AC1D9C521027BAD9E7E3EFE7 /* Pods */,
+				12DA964A2731AD5000FDCD7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D87A1CF41F6CB32000F2D999 /* Build configuration list for PBXNativeTarget "iFeiBo" */;
 			buildPhases = (
+				3E91838A848CC86E4CD8FBA2 /* [CP] Check Pods Manifest.lock */,
 				D87A1CE11F6CB32000F2D999 /* Sources */,
 				D87A1CE21F6CB32000F2D999 /* Frameworks */,
 				D87A1CE31F6CB32000F2D999 /* Resources */,
+				0609E3D110903CF49359BA78 /* [CP] Embed Pods Frameworks */,
+				55C16E1F7B506599C4270D4A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,6 +187,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0609E3D110903CF49359BA78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iFeiBo/Pods-iFeiBo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iFeiBo/Pods-iFeiBo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E91838A848CC86E4CD8FBA2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iFeiBo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55C16E1F7B506599C4270D4A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iFeiBo/Pods-iFeiBo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D87A1CE11F6CB32000F2D999 /* Sources */ = {
@@ -284,6 +365,7 @@
 		};
 		D87A1CF51F6CB32000F2D999 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54EF7649B5B77774A69E2E3A /* Pods-iFeiBo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFeiBo/iFeiBo.entitlements;
@@ -298,6 +380,7 @@
 		};
 		D87A1CF61F6CB32000F2D999 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8112D1526EF802B7BF36A377 /* Pods-iFeiBo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFeiBo/iFeiBo.entitlements;
