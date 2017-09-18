@@ -23,7 +23,7 @@ class HomeViewController: NSViewController {
     
         let nib = NSNib(nibNamed: "HomeStatusView", bundle: nil)!
         tableView.register(nib, forIdentifier: reusedKey)
-        
+    
         
         
         HTTPManager.getWBStatus { (dict) in
@@ -47,16 +47,17 @@ extension HomeViewController : NSTableViewDelegate{
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = tableView.make(withIdentifier: reusedKey, owner: self) as! HomeStatusView
         
-        
+        cell.status = statuses[row]
         
         return cell
         
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        let cell = tableView.make(withIdentifier: reusedKey, owner: self)!
-        
+        let cell = tableView.make(withIdentifier: reusedKey, owner: self) as! HomeStatusView
+        cell.status = statuses[row]
         cell.layoutSubtreeIfNeeded()
+        print(cell.frame.width)
         return cell.frame.height
         
     }

@@ -882,14 +882,14 @@ you can see it just for logout your account</string>
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="efW-KQ-8wX" firstAttribute="top" secondItem="ZkJ-m1-WOu" secondAttribute="top" id="Aub-hy-yvd"/>
+                            <constraint firstAttribute="trailing" secondItem="efW-KQ-8wX" secondAttribute="trailing" id="CBu-Yq-onf"/>
                             <constraint firstAttribute="trailing" secondItem="W3D-g9-jeL" secondAttribute="trailing" id="Eug-nt-0UX"/>
-                            <constraint firstAttribute="trailing" secondItem="efW-KQ-8wX" secondAttribute="trailing" id="ZHZ-tA-9Rz"/>
+                            <constraint firstItem="efW-KQ-8wX" firstAttribute="leading" secondItem="ZkJ-m1-WOu" secondAttribute="leading" id="Orn-Rh-cl2"/>
                             <constraint firstItem="W3D-g9-jeL" firstAttribute="leading" secondItem="ZkJ-m1-WOu" secondAttribute="leading" id="bdx-TJ-zJa"/>
-                            <constraint firstItem="efW-KQ-8wX" firstAttribute="leading" secondItem="ZkJ-m1-WOu" secondAttribute="leading" id="enu-z9-SBZ"/>
                             <constraint firstAttribute="bottom" secondItem="W3D-g9-jeL" secondAttribute="bottom" id="j4q-HX-5nZ"/>
+                            <constraint firstItem="efW-KQ-8wX" firstAttribute="top" secondItem="ZkJ-m1-WOu" secondAttribute="top" id="nBH-wh-T6M"/>
                             <constraint firstItem="W3D-g9-jeL" firstAttribute="top" secondItem="ZkJ-m1-WOu" secondAttribute="top" id="ttv-Yv-yAr"/>
-                            <constraint firstAttribute="bottom" secondItem="efW-KQ-8wX" secondAttribute="bottom" id="wO6-Sg-hlF"/>
+                            <constraint firstAttribute="bottom" secondItem="efW-KQ-8wX" secondAttribute="bottom" id="vkP-ya-xMS"/>
                         </constraints>
                     </view>
                     <connections>

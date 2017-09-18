@@ -7,14 +7,33 @@
 //
 
 import Cocoa
+import Kingfisher
 
 class HomeStatusView: NSView {
+    
+    var status : WBStatus? {
+        didSet{
+            guard let name = status?.user?.name else {return}
+            nameLabel.stringValue = name
+            guard let time = status?.created_at else {return}
+            timeLabel.stringValue = time
+            guard let url = status?.user?.avatar_hd else { return  }
+            headerImageView.kf.setImage(with: URL(string: url))
+            textLabel.stringValue = status?.text ?? ""
+
+            
+        }
+    }
 
     @IBOutlet weak var headerImageView: NSImageView!
     
     @IBOutlet weak var nameLabel: NSTextField!
     
     @IBOutlet weak var timeLabel: NSTextField!
+    
+    @IBOutlet weak var textLabel: NSTextField!
+    
+    
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
