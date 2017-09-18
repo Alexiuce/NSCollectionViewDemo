@@ -888,6 +888,9 @@ you can see it just for logout your account</string>
                             <constraint firstAttribute="bottom" secondItem="efW-KQ-8wX" secondAttribute="bottom" id="wO6-Sg-hlF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="WeX-jv-uij" id="AwA-4x-zPR"/>
+                    </connections>
                 </viewController>
                 <customObject id="8Rs-Ue-ONe" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

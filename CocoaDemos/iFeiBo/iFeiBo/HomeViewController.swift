@@ -7,14 +7,29 @@
 //
 
 import Cocoa
+import Alamofire
 
 class HomeViewController: NSViewController {
 
+    @IBOutlet weak var tableView: NSTableView!         // NSTableView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+    
+        HTTPManager.getWBStatus { (dict) in
+            
+        }
+        
     }
     
-    /** exit  user account , show Login Interface */
+    
+}
+
+// MARK: - NSTableViewDataSource
+extension HomeViewController : NSTableViewDataSource{
+    
+}
+// MARK: -  NSTableViewDelegate
+extension HomeViewController : NSTableViewDelegate{
     
 }
