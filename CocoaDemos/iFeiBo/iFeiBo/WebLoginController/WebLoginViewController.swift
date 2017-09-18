@@ -24,8 +24,19 @@ class WebLoginViewController: NSViewController {
             let paraDict = ["client_id":WBAppID,"client_secret":WBAppSecretKey,"grant_type":"authorization_code",
                             "code":codeForToken,"redirect_uri":WBAppReDirectURL]
             
-            Alamofire.request(url, method: .post, parameters: paraDict).responseJSON { (data) in
-                print(data)
+            Alamofire.request(url, method: .post, parameters: paraDict).responseJSON { (response) in
+              
+                guard let data =  try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.mutableLeaves)  as? [String : Any] else {
+                    return
+                }
+                let account = UserAccount(dict: data)
+                _ = UAToolManager.defaultManager.saveUserAccount(account)
+                UserDefaults.standard.set(true, forKey: kFBLoginStatusKey)
+                UserDefaults.standard.synchronize()
+                let storyboard = NSStoryboard(name: "Main", bundle: nil)
+                let homeWindowController = storyboard.instantiateController(withIdentifier: kFBHomeControllerID) as! HomeWindowController
+                
+                homeWindowController.showWindow(nil)
             }
             
             

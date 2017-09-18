@@ -8,5 +8,6 @@ target 'iFeiBo' do
   # Pods for iFeiBo
 
   pod 'Alamofire', '~> 4.5'
+  pod 'MJExtension'
 
 end

@@ -29,6 +29,7 @@ class HomeWindowController: NSWindowController {
         print("home deinit app windows \(NSApp.windows)")
     }
     @IBAction func showHome(_ sender: NSToolbarItem) {
+       
         
     }
     @IBAction func showProfile(_ sender: NSToolbarItem) {

@@ -7,22 +7,44 @@
 //
 
 import Cocoa
+import MJExtension
 
-class UserAccount: NSObject {
+class UserAccount: NSObject,NSCoding {
     var access_token = ""
-    var expires_in = 0
-    var isRealName = false
-    var remind_in = 0
-    var scope = ""
-    var uid = 0
+    var expires_in = ""
+    var remind_in = ""
+    var uid = ""
     
-    init(dict : NSDictionary){
+    init(dict : [String : Any]?){
         super.init()
-        self.setValuesForKeys(dict as! [String : Any])
+        guard let dict = dict else { return }
+        mj_setKeyValues(dict)
     }
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+
+    
+    
+    /** 解码对象（反序列化）*/
+    required init?(coder aDecoder: NSCoder) {
+        access_token = aDecoder.decodeObject(forKey: "access_token") as! String
+        expires_in = aDecoder.decodeObject(forKey: "expires_in") as! String
+
+        remind_in = aDecoder.decodeObject(forKey: "remind_in") as! String
+    
+        uid = aDecoder.decodeObject(forKey: "uid") as! String
         
     }
+    /** 编码对象（序列化）*/
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(access_token, forKey: "access_token")
+        aCoder.encode(expires_in, forKey: "expires_in")
+        aCoder.encode(remind_in, forKey:  "remind_in")
+        aCoder.encode(uid, forKey: "uid")
+    }
     
-
+    override var description: String{
+        let keys = ["uid","expires_in","access_token"]
+        return dictionaryWithValues(forKeys: keys).description
+    }
 }
+
+
