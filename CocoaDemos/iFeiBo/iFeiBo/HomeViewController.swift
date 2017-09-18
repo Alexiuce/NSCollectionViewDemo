@@ -9,27 +9,60 @@
 import Cocoa
 import Alamofire
 
+
+let reusedKey = "HomeCellReusedKey"
+
 class HomeViewController: NSViewController {
 
     @IBOutlet weak var tableView: NSTableView!         // NSTableView
     
+    var statuses : [WBStatus] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        let nib = NSNib(nibNamed: "HomeStatusView", bundle: nil)!
+        tableView.register(nib, forIdentifier: reusedKey)
+        
+        
+        
         HTTPManager.getWBStatus { (dict) in
-            
+            self.statuses = WBStatus.statusesFromDicts(dict?["statuses"] as! [[String : Any]])
+            self.tableView.reloadData()
         }
         
     }
-    
-    
 }
 
 // MARK: - NSTableViewDataSource
 extension HomeViewController : NSTableViewDataSource{
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return statuses.count
+    }
     
 }
 // MARK: -  NSTableViewDelegate
 extension HomeViewController : NSTableViewDelegate{
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let cell = tableView.make(withIdentifier: reusedKey, owner: self) as! HomeStatusView
+        
+        
+        
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        let cell = tableView.make(withIdentifier: reusedKey, owner: self)!
+        
+        cell.layoutSubtreeIfNeeded()
+        return cell.frame.height
+        
+    }
+    
+    
+    
+    
     
 }

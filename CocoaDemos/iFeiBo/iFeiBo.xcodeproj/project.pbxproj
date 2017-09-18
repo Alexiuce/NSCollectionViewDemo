@@ -20,6 +20,10 @@
 		D8DD7E661F6DFF770029D27E /* WebLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DD7E651F6DFF770029D27E /* WebLogin.storyboard */; };
 		D8DD7E691F6E00020029D27E /* WebLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD7E681F6E00020029D27E /* WebLoginViewController.swift */; };
 		F20172021F6F99BA007F9581 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20172011F6F99BA007F9581 /* HTTPManager.swift */; };
+		F20172041F6FA1C6007F9581 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20172031F6FA1C6007F9581 /* WBStatus.swift */; };
+		F20172061F6FA3F1007F9581 /* WBStatusUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20172051F6FA3F1007F9581 /* WBStatusUser.swift */; };
+		F20172081F6FB13C007F9581 /* HomeStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20172071F6FB13C007F9581 /* HomeStatusView.swift */; };
+		F201720A1F6FB153007F9581 /* HomeStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F20172091F6FB153007F9581 /* HomeStatusView.xib */; };
 		F2FBB0961F6F63AA00F18014 /* UAToolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FBB0951F6F63AA00F18014 /* UAToolManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +46,10 @@
 		D8DD7E651F6DFF770029D27E /* WebLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebLogin.storyboard; sourceTree = "<group>"; };
 		D8DD7E681F6E00020029D27E /* WebLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLoginViewController.swift; sourceTree = "<group>"; };
 		F20172011F6F99BA007F9581 /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
+		F20172031F6FA1C6007F9581 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
+		F20172051F6FA3F1007F9581 /* WBStatusUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusUser.swift; sourceTree = "<group>"; };
+		F20172071F6FB13C007F9581 /* HomeStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStatusView.swift; sourceTree = "<group>"; };
+		F20172091F6FB153007F9581 /* HomeStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeStatusView.xib; sourceTree = "<group>"; };
 		F2FBB0951F6F63AA00F18014 /* UAToolManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UAToolManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +112,11 @@
 				D87A1CFB1F6CBD1600F2D999 /* LoginViewController.swift */,
 				D87A1CF91F6CB3B800F2D999 /* HomeWindowController.swift */,
 				D87A1CFD1F6CBD2B00F2D999 /* HomeViewController.swift */,
+				F20172071F6FB13C007F9581 /* HomeStatusView.swift */,
+				F20172091F6FB153007F9581 /* HomeStatusView.xib */,
 				F20172011F6F99BA007F9581 /* HTTPManager.swift */,
+				F20172031F6FA1C6007F9581 /* WBStatus.swift */,
+				F20172051F6FA3F1007F9581 /* WBStatusUser.swift */,
 				D8DD7E671F6DFFE50029D27E /* WebLoginController */,
 				D87A1CEC1F6CB32000F2D999 /* Assets.xcassets */,
 				D8DD7E651F6DFF770029D27E /* WebLogin.storyboard */,
@@ -192,6 +204,7 @@
 				D8DD7E661F6DFF770029D27E /* WebLogin.storyboard in Resources */,
 				D87A1CED1F6CB32000F2D999 /* Assets.xcassets in Resources */,
 				D87A1CF01F6CB32000F2D999 /* Main.storyboard in Resources */,
+				F201720A1F6FB153007F9581 /* HomeStatusView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,12 +270,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D80A7C521F6E3F0E0023B175 /* UserAccount.swift in Sources */,
+				F20172061F6FA3F1007F9581 /* WBStatusUser.swift in Sources */,
 				D87A1CF81F6CB3A200F2D999 /* LoginWindowController.swift in Sources */,
 				F2FBB0961F6F63AA00F18014 /* UAToolManager.swift in Sources */,
 				D87A1CFA1F6CB3B800F2D999 /* HomeWindowController.swift in Sources */,
 				D87A1CFC1F6CBD1600F2D999 /* LoginViewController.swift in Sources */,
 				D8DD7E691F6E00020029D27E /* WebLoginViewController.swift in Sources */,
 				D87A1CE91F6CB32000F2D999 /* AppDelegate.swift in Sources */,
+				F20172041F6FA1C6007F9581 /* WBStatus.swift in Sources */,
+				F20172081F6FB13C007F9581 /* HomeStatusView.swift in Sources */,
 				F20172021F6F99BA007F9581 /* HTTPManager.swift in Sources */,
 				D87A1CFE1F6CBD2B00F2D999 /* HomeViewController.swift in Sources */,
 				D87A1D011F6CCAA200F2D999 /* ConstantKey.swift in Sources */,

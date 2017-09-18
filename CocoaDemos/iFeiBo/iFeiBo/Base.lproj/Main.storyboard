@@ -864,6 +864,10 @@ you can see it just for logout your account</string>
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="kNw-oy-6cw" id="teO-d6-PaR"/>
+                                                <outlet property="delegate" destination="kNw-oy-6cw" id="jMN-nc-GiL"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>

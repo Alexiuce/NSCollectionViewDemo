@@ -11,15 +11,19 @@ import Alamofire
 
 class HTTPManager {
 
-   class func getWBStatus(_ finished : ([String : AnyObject]?)->()) {
+   class func getWBStatus(_ finished : @escaping ([String : Any]?)->()) {
         
         // 1. url
         let statusURL = URL(string: WBStatusURL)!
         // 2. send https request
         Alamofire.request(statusURL, method: HTTPMethod.get, parameters: ["access_token": UAToolManager.defaultManager.userAccount!.access_token]).responseJSON { (response) in
+            guard let dict = response.value as? [String : Any] else {return}
+            // 3. callback closure
+            finished(dict)
+         
             
         }
-        
+    
     }
 
 }
