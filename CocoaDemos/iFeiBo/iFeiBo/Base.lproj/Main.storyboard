@@ -817,13 +817,14 @@ you can see it just for logout your account</string>
                             <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="W3D-g9-jeL">
                                 <rect key="frame" x="0.0" y="0.0" width="567" height="270"/>
                             </visualEffectView>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efW-KQ-8wX">
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="86" horizontalPageScroll="10" verticalLineScroll="86" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efW-KQ-8wX">
                                 <rect key="frame" x="0.0" y="0.0" width="567" height="270"/>
-                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="88o-KZ-e2q">
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="88o-KZ-e2q">
                                     <rect key="frame" x="1" y="1" width="565" height="268"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="WeX-jv-uij">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="84" rowSizeStyle="automatic" viewBased="YES" id="WeX-jv-uij">
                                             <rect key="frame" x="0.0" y="0.0" width="565" height="268"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -843,22 +844,38 @@ you can see it just for logout your account</string>
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="HWR-T0-OaU">
-                                                            <rect key="frame" x="1" y="1" width="562" height="17"/>
+                                                        <tableCellView identifier="homeCell" id="HWR-T0-OaU" customClass="HomeCellView" customModule="iFeiBo" customModuleProvider="target">
+                                                            <rect key="frame" x="1" y="1" width="562" height="84"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-rJ-MQj">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="562" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="0ZO-gi-NBc">
+                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0SV-oZ-zQY">
+                                                                    <rect key="frame" x="3" y="33" width="48" height="48"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="48" id="a18-fP-PRP"/>
+                                                                        <constraint firstAttribute="width" constant="48" id="i2m-xK-iJD"/>
+                                                                    </constraints>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="TXa-Vy-u43"/>
+                                                                </imageView>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRK-M2-PFG">
+                                                                    <rect key="frame" x="9" y="3" width="545" height="17"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="charWrapping" sendsActionOnEndEditing="YES" title="Label" id="EU1-kj-Eas">
                                                                         <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="eRK-M2-PFG" firstAttribute="top" secondItem="0SV-oZ-zQY" secondAttribute="bottom" constant="13" id="8Kz-Db-jXw"/>
+                                                                <constraint firstItem="0SV-oZ-zQY" firstAttribute="top" secondItem="HWR-T0-OaU" secondAttribute="top" constant="3" id="A8T-FU-VdN"/>
+                                                                <constraint firstItem="0SV-oZ-zQY" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="3" id="EBi-Bk-Z7s"/>
+                                                                <constraint firstAttribute="trailing" secondItem="eRK-M2-PFG" secondAttribute="trailing" constant="10" id="J5M-N9-f06"/>
+                                                                <constraint firstItem="eRK-M2-PFG" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="11" id="RnX-yO-zRp"/>
+                                                                <constraint firstAttribute="bottom" secondItem="eRK-M2-PFG" secondAttribute="bottom" constant="3" id="VGB-zF-L83"/>
+                                                            </constraints>
                                                             <connections>
-                                                                <outlet property="textField" destination="GHA-rJ-MQj" id="ZYK-m1-Ti5"/>
+                                                                <outlet property="headImageView" destination="0SV-oZ-zQY" id="BbN-4B-ifn"/>
+                                                                <outlet property="textLabel" destination="eRK-M2-PFG" id="UQH-YG-dxp"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -882,14 +899,10 @@ you can see it just for logout your account</string>
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="efW-KQ-8wX" secondAttribute="trailing" id="CBu-Yq-onf"/>
                             <constraint firstAttribute="trailing" secondItem="W3D-g9-jeL" secondAttribute="trailing" id="Eug-nt-0UX"/>
-                            <constraint firstItem="efW-KQ-8wX" firstAttribute="leading" secondItem="ZkJ-m1-WOu" secondAttribute="leading" id="Orn-Rh-cl2"/>
                             <constraint firstItem="W3D-g9-jeL" firstAttribute="leading" secondItem="ZkJ-m1-WOu" secondAttribute="leading" id="bdx-TJ-zJa"/>
                             <constraint firstAttribute="bottom" secondItem="W3D-g9-jeL" secondAttribute="bottom" id="j4q-HX-5nZ"/>
-                            <constraint firstItem="efW-KQ-8wX" firstAttribute="top" secondItem="ZkJ-m1-WOu" secondAttribute="top" id="nBH-wh-T6M"/>
                             <constraint firstItem="W3D-g9-jeL" firstAttribute="top" secondItem="ZkJ-m1-WOu" secondAttribute="top" id="ttv-Yv-yAr"/>
-                            <constraint firstAttribute="bottom" secondItem="efW-KQ-8wX" secondAttribute="bottom" id="vkP-ya-xMS"/>
                         </constraints>
                     </view>
                     <connections>
@@ -898,7 +911,7 @@ you can see it just for logout your account</string>
                 </viewController>
                 <customObject id="8Rs-Ue-ONe" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="815" y="950"/>
+            <point key="canvasLocation" x="814.5" y="950"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hIz-AP-VOD">

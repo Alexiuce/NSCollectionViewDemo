@@ -10,7 +10,7 @@ import Cocoa
 import Alamofire
 
 
-let reusedKey = "HomeCellReusedKey"
+let reusedKey = "homeCell"
 
 class HomeViewController: NSViewController {
 
@@ -21,18 +21,36 @@ class HomeViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        let nib = NSNib(nibNamed: "HomeStatusView", bundle: nil)!
-        tableView.register(nib, forIdentifier: reusedKey)
+//        let nib = NSNib(nibNamed: "HomeStatusView", bundle: nil)!
+//        tableView.register(nib, forIdentifier: reusedKey)
     
         
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTableViewResize), name: .NSViewFrameDidChange, object: tableView)
         
         HTTPManager.getWBStatus { (dict) in
             self.statuses = WBStatus.statusesFromDicts(dict?["statuses"] as! [[String : Any]])
             self.tableView.reloadData()
         }
+    }
+    
+    func handleTableViewResize(){
+      
+        let vr = tableView.visibleRect
+        let range = tableView.rows(in: vr)
+       
+        if range.length > 0 {
+            let indexes = IndexSet(integersIn: range.location..<range.location + range.length - 1)
+            
+            tableView.noteHeightOfRows(withIndexesChanged: indexes)
+            XCPring(indexes)
+        }
+        
         
     }
 }
+
+
+
 
 // MARK: - NSTableViewDataSource
 extension HomeViewController : NSTableViewDataSource{
@@ -43,27 +61,31 @@ extension HomeViewController : NSTableViewDataSource{
 }
 // MARK: -  NSTableViewDelegate
 extension HomeViewController : NSTableViewDelegate{
+
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let cell = tableView.make(withIdentifier: reusedKey, owner: self) as! HomeStatusView
+        let cell = tableView.make(withIdentifier: reusedKey, owner: self) as! HomeCellView
+        
+        cell.status = statuses[row]
+        return cell
+
+    }
+    
+    
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        let cell = tableView.make(withIdentifier: reusedKey, owner: self) as! HomeCellView
         
         cell.status = statuses[row]
         
-        return cell
+        cell.frame.size.width = tableView.bounds.size.width
         
-    }
-    
-    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        let cell = tableView.make(withIdentifier: reusedKey, owner: self) as! HomeStatusView
-       
+        cell.needsLayout = true
         cell.layoutSubtreeIfNeeded()
-        XCPring(cell.frame)
-        return cell.frame.height
+        
+        XCPring(NSStringFromRect(cell.frame))
+        XCPring(NSStringFromRect(tableView.frame))
+        return cell.fittingSize.height
         
     }
-    
-    
-    
-    
     
 }

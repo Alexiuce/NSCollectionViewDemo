@@ -20,8 +20,6 @@ class HomeStatusView: NSView {
             guard let url = status?.user?.avatar_hd else { return  }
             headerImageView.kf.setImage(with: URL(string: url))
             textLabel.stringValue = status?.text ?? ""
-
-            
         }
     }
 
@@ -33,7 +31,13 @@ class HomeStatusView: NSView {
     
     @IBOutlet weak var textLabel: NSTextField!
     
-    
+    func caculateHeight(_ tableView: NSTableView, targetStatus: WBStatus) -> CGFloat{
+        bounds.size.width = tableView.bounds.width
+        status = targetStatus
+        
+        layoutSubtreeIfNeeded()
+        return bounds.height
+    }
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)

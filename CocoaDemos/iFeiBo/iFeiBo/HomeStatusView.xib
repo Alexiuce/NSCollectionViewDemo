@@ -10,7 +10,7 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe" customClass="HomeStatusView" customModule="iFeiBo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="284" height="122"/>
+            <rect key="frame" x="0.0" y="0.0" width="369" height="122"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W9z-iR-bh2">
@@ -38,7 +38,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5g-jD-ltB">
-                    <rect key="frame" x="14" y="20" width="260" height="17"/>
+                    <rect key="frame" x="14" y="20" width="341" height="17"/>
                     <textFieldCell key="cell" lineBreakMode="charWrapping" continuous="YES" sendsActionOnEndEditing="YES" title="Label" id="4uY-dY-5nZ">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -47,15 +47,15 @@
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="S5g-jD-ltB" firstAttribute="top" secondItem="SKj-Pa-dAD" secondAttribute="bottom" constant="35" id="1DT-ac-X7L"/>
-                <constraint firstItem="S5g-jD-ltB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="3Di-BY-NzA"/>
                 <constraint firstItem="SKj-Pa-dAD" firstAttribute="leading" secondItem="TfC-rv-mGG" secondAttribute="leading" id="7IT-QY-eYc"/>
-                <constraint firstAttribute="bottom" secondItem="S5g-jD-ltB" secondAttribute="bottom" constant="20" id="IyU-zM-bf1"/>
+                <constraint firstAttribute="bottom" secondItem="S5g-jD-ltB" secondAttribute="bottom" constant="20" id="7ym-Cj-zc4"/>
+                <constraint firstItem="S5g-jD-ltB" firstAttribute="top" secondItem="W9z-iR-bh2" secondAttribute="bottom" constant="35" id="EQg-pz-oKb"/>
                 <constraint firstItem="W9z-iR-bh2" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="SNw-YJ-ygQ"/>
                 <constraint firstItem="TfC-rv-mGG" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="SS4-0g-nlS"/>
-                <constraint firstAttribute="trailing" secondItem="S5g-jD-ltB" secondAttribute="trailing" constant="12" id="X2l-3o-YYs"/>
+                <constraint firstItem="S5g-jD-ltB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="a54-0C-qFf"/>
                 <constraint firstItem="TfC-rv-mGG" firstAttribute="leading" secondItem="W9z-iR-bh2" secondAttribute="trailing" constant="14" id="dSf-z0-48h"/>
                 <constraint firstItem="W9z-iR-bh2" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="hLZ-jb-3zI"/>
+                <constraint firstAttribute="trailing" secondItem="S5g-jD-ltB" secondAttribute="trailing" constant="16" id="tqw-d3-evi"/>
                 <constraint firstItem="SKj-Pa-dAD" firstAttribute="top" secondItem="TfC-rv-mGG" secondAttribute="bottom" constant="7" id="ukb-EZ-uUk"/>
             </constraints>
             <connections>
@@ -64,7 +64,7 @@
                 <outlet property="textLabel" destination="S5g-jD-ltB" id="Ht1-PR-IEQ"/>
                 <outlet property="timeLabel" destination="SKj-Pa-dAD" id="jiV-M6-hRr"/>
             </connections>
-            <point key="canvasLocation" x="41" y="103.5"/>
+            <point key="canvasLocation" x="83.5" y="124"/>
         </customView>
     </objects>
 </document>
