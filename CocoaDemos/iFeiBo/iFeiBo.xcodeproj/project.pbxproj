@@ -402,6 +402,17 @@
 				HEADER_SEARCH_PATHS = "\"${SRCROOT}/**";
 				INFOPLIST_FILE = iFeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-D",
+					DEBUG,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexiuce.iFeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -419,6 +430,15 @@
 				HEADER_SEARCH_PATHS = "\"${SRCROOT}/**";
 				INFOPLIST_FILE = iFeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"MJExtension\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexiuce.iFeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

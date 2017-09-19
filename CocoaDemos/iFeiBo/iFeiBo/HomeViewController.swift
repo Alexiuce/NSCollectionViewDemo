@@ -55,9 +55,9 @@ extension HomeViewController : NSTableViewDelegate{
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         let cell = tableView.make(withIdentifier: reusedKey, owner: self) as! HomeStatusView
-        cell.status = statuses[row]
+       
         cell.layoutSubtreeIfNeeded()
-        print(cell.frame.width)
+        XCPring(cell.frame)
         return cell.frame.height
         
     }

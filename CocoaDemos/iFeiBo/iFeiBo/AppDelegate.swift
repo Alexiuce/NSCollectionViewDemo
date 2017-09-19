@@ -108,3 +108,10 @@ extension AppDelegate{
     
 }
 
+func XCPring(_ message:Any...,file:String = #file,row:Int = #line){
+    #if DEBUG
+        let filename = (file as NSString).lastPathComponent
+        Swift.print("[\(filename)-\(row)]:\(message)")
+    #endif
+}
+
