@@ -14,6 +14,8 @@ class HomeCellView: NSTableCellView {
     
     @IBOutlet weak var textLabel: NSTextField!
     
+
+    
     var status : WBStatus? {
         didSet{
         

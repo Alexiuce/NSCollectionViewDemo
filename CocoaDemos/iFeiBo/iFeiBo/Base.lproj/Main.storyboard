@@ -817,10 +817,9 @@ you can see it just for logout your account</string>
                             <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="W3D-g9-jeL">
                                 <rect key="frame" x="0.0" y="0.0" width="567" height="270"/>
                             </visualEffectView>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="86" horizontalPageScroll="10" verticalLineScroll="86" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efW-KQ-8wX">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="86" horizontalPageScroll="10" verticalLineScroll="86" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efW-KQ-8wX">
                                 <rect key="frame" x="0.0" y="0.0" width="567" height="270"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="88o-KZ-e2q">
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="88o-KZ-e2q">
                                     <rect key="frame" x="1" y="1" width="565" height="268"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -844,21 +843,21 @@ you can see it just for logout your account</string>
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="homeCell" id="HWR-T0-OaU" customClass="HomeCellView" customModule="iFeiBo" customModuleProvider="target">
+                                                        <tableCellView identifier="homeCell" misplaced="YES" id="HWR-T0-OaU" customClass="HomeCellView" customModule="iFeiBo" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="1" width="562" height="84"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0SV-oZ-zQY">
-                                                                    <rect key="frame" x="3" y="33" width="48" height="48"/>
+                                                                    <rect key="frame" x="3" y="38" width="48" height="48"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="48" id="a18-fP-PRP"/>
                                                                         <constraint firstAttribute="width" constant="48" id="i2m-xK-iJD"/>
                                                                     </constraints>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="TXa-Vy-u43"/>
                                                                 </imageView>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRK-M2-PFG">
-                                                                    <rect key="frame" x="9" y="3" width="545" height="17"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="charWrapping" sendsActionOnEndEditing="YES" title="Label" id="EU1-kj-Eas">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-7E-hgb">
+                                                                    <rect key="frame" x="3" y="3" width="556" height="22"/>
+                                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" borderStyle="bezel" title="Multiline Label" id="eie-Kq-Cae">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -866,16 +865,16 @@ you can see it just for logout your account</string>
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="eRK-M2-PFG" firstAttribute="top" secondItem="0SV-oZ-zQY" secondAttribute="bottom" constant="13" id="8Kz-Db-jXw"/>
                                                                 <constraint firstItem="0SV-oZ-zQY" firstAttribute="top" secondItem="HWR-T0-OaU" secondAttribute="top" constant="3" id="A8T-FU-VdN"/>
+                                                                <constraint firstAttribute="bottom" secondItem="J0x-7E-hgb" secondAttribute="bottom" constant="3" id="BNd-e5-YSg"/>
+                                                                <constraint firstItem="J0x-7E-hgb" firstAttribute="top" secondItem="0SV-oZ-zQY" secondAttribute="bottom" constant="13" id="BbX-Fh-wTN"/>
                                                                 <constraint firstItem="0SV-oZ-zQY" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="3" id="EBi-Bk-Z7s"/>
-                                                                <constraint firstAttribute="trailing" secondItem="eRK-M2-PFG" secondAttribute="trailing" constant="10" id="J5M-N9-f06"/>
-                                                                <constraint firstItem="eRK-M2-PFG" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="11" id="RnX-yO-zRp"/>
-                                                                <constraint firstAttribute="bottom" secondItem="eRK-M2-PFG" secondAttribute="bottom" constant="3" id="VGB-zF-L83"/>
+                                                                <constraint firstAttribute="trailing" secondItem="J0x-7E-hgb" secondAttribute="trailing" constant="3" id="KEy-zz-TJw"/>
+                                                                <constraint firstItem="J0x-7E-hgb" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="3" id="SFD-qL-9ch"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="headImageView" destination="0SV-oZ-zQY" id="BbN-4B-ifn"/>
-                                                                <outlet property="textLabel" destination="eRK-M2-PFG" id="UQH-YG-dxp"/>
+                                                                <outlet property="textLabel" destination="J0x-7E-hgb" id="wJe-Ts-w8Q"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -900,8 +899,12 @@ you can see it just for logout your account</string>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="W3D-g9-jeL" secondAttribute="trailing" id="Eug-nt-0UX"/>
+                            <constraint firstAttribute="bottom" secondItem="efW-KQ-8wX" secondAttribute="bottom" id="Jab-mT-kgx"/>
+                            <constraint firstItem="efW-KQ-8wX" firstAttribute="top" secondItem="ZkJ-m1-WOu" secondAttribute="top" id="Q3b-3i-BNx"/>
                             <constraint firstItem="W3D-g9-jeL" firstAttribute="leading" secondItem="ZkJ-m1-WOu" secondAttribute="leading" id="bdx-TJ-zJa"/>
                             <constraint firstAttribute="bottom" secondItem="W3D-g9-jeL" secondAttribute="bottom" id="j4q-HX-5nZ"/>
+                            <constraint firstAttribute="trailing" secondItem="efW-KQ-8wX" secondAttribute="trailing" id="oht-lB-xFL"/>
+                            <constraint firstItem="efW-KQ-8wX" firstAttribute="leading" secondItem="ZkJ-m1-WOu" secondAttribute="leading" id="qUs-cm-zWn"/>
                             <constraint firstItem="W3D-g9-jeL" firstAttribute="top" secondItem="ZkJ-m1-WOu" secondAttribute="top" id="ttv-Yv-yAr"/>
                         </constraints>
                     </view>
