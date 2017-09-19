@@ -843,12 +843,12 @@ you can see it just for logout your account</string>
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="homeCell" misplaced="YES" id="HWR-T0-OaU" customClass="HomeCellView" customModule="iFeiBo" customModuleProvider="target">
+                                                        <tableCellView identifier="homeCell" id="HWR-T0-OaU" customClass="HomeCellView" customModule="iFeiBo" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="1" width="562" height="84"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0SV-oZ-zQY">
-                                                                    <rect key="frame" x="3" y="38" width="48" height="48"/>
+                                                                    <rect key="frame" x="3" y="33" width="48" height="48"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="48" id="a18-fP-PRP"/>
                                                                         <constraint firstAttribute="width" constant="48" id="i2m-xK-iJD"/>
@@ -856,8 +856,8 @@ you can see it just for logout your account</string>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="TXa-Vy-u43"/>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-7E-hgb">
-                                                                    <rect key="frame" x="3" y="3" width="556" height="22"/>
-                                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" borderStyle="bezel" title="Multiline Label" id="eie-Kq-Cae">
+                                                                    <rect key="frame" x="1" y="3" width="560" height="17"/>
+                                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Multiline Label" id="eie-Kq-Cae">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

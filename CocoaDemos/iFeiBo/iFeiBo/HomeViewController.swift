@@ -35,22 +35,13 @@ class HomeViewController: NSViewController {
     
     func handleTableViewResize(){
       
-        let vr = tableView.visibleRect
-        let range = tableView.rows(in: vr)
-       
-        if range.length > 0 {
-            let indexes = IndexSet(integersIn: range.location..<range.location + range.length - 1)
-            
+            let indexes = IndexSet(integersIn: 0..<tableView.numberOfRows)
+            NSAnimationContext.beginGrouping()
+            NSAnimationContext.current().duration = 0
             tableView.noteHeightOfRows(withIndexesChanged: indexes)
-            XCPring(indexes)
-        }
-        
-        
+            NSAnimationContext.endGrouping()
     }
 }
-
-
-
 
 // MARK: - NSTableViewDataSource
 extension HomeViewController : NSTableViewDataSource{
@@ -82,8 +73,6 @@ extension HomeViewController : NSTableViewDelegate{
         cell.needsLayout = true
         cell.layoutSubtreeIfNeeded()
         
-        XCPring(NSStringFromRect(cell.frame))
-        XCPring(NSStringFromRect(tableView.frame))
         return cell.fittingSize.height
         
     }
