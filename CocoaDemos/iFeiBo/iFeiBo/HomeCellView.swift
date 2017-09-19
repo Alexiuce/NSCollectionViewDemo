@@ -25,12 +25,26 @@ class HomeCellView: NSTableCellView {
         }
     }
     
+    override var backgroundStyle: NSBackgroundStyle{
+        didSet{
+            if backgroundStyle == .dark {
+                layer?.backgroundColor = NSColor.red.cgColor
+            }else{
+                layer?.backgroundColor = NSColor.clear.cgColor
+            }
     
-    
+        }
+   
+    }
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
         // Drawing code here.
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        wantsLayer = true
     }
     
 }

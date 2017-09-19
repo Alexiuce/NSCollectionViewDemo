@@ -18,6 +18,7 @@ class HomeViewController: NSViewController {
     
     var statuses : [WBStatus] = []
     
+    var currentSelectView : HomeCellView?
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -74,6 +75,16 @@ extension HomeViewController : NSTableViewDelegate{
         cell.layoutSubtreeIfNeeded()
         
         return cell.fittingSize.height
+        
+    }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        guard let selectView = tableView.view(atColumn: 0, row: tableView.selectedRow, makeIfNecessary: false) as? HomeCellView else {return}
+        if let currentSelectView = currentSelectView {
+            currentSelectView.backgroundStyle = .light
+        }
+        selectView.backgroundStyle = .dark
+        currentSelectView = selectView
         
     }
     
