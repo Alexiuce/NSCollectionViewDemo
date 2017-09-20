@@ -817,7 +817,7 @@ you can see it just for logout your account</string>
                             <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="W3D-g9-jeL">
                                 <rect key="frame" x="0.0" y="0.0" width="567" height="270"/>
                             </visualEffectView>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="86" horizontalPageScroll="10" verticalLineScroll="86" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efW-KQ-8wX">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="86" horizontalPageScroll="10" verticalLineScroll="86" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efW-KQ-8wX" customClass="XCPullRefreshScrollView" customModule="iFeiBo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="567" height="270"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="88o-KZ-e2q">
                                     <rect key="frame" x="1" y="1" width="565" height="268"/>

@@ -21,9 +21,8 @@ class HomeViewController: NSViewController {
     var currentSelectView : HomeCellView?
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-//        let nib = NSNib(nibNamed: "HomeStatusView", bundle: nil)!
-//        tableView.register(nib, forIdentifier: reusedKey)
+
+
     
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleTableViewResize), name: .NSViewFrameDidChange, object: tableView)
