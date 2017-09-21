@@ -20,10 +20,10 @@ class HTTPManager {
             guard let dict = response.value as? [String : Any] else {return}
             // 3. callback closure
             finished(dict)
-         
-            
         }
-    
     }
+    
+
+    
 
 }

@@ -8,6 +8,8 @@
 
 import Cocoa
 
+
+
 class XCPullRefreshScrollView: NSScrollView {
 
     fileprivate var headerView : NSView?                // 头部视图
@@ -27,6 +29,7 @@ class XCPullRefreshScrollView: NSScrollView {
         if event.phase == .ended {
             if showHeaderView() {
                 startRefreshing()
+                return
             }
         }
         super.scrollWheel(with: event)
@@ -61,7 +64,7 @@ extension XCPullRefreshScrollView{
     fileprivate func startRefreshing(){
         XCPring("START REFRESH")
         isRefreshing = true
-        documentView?.setFrameOrigin(NSMakePoint(0, headerHeight))
+        documentView?.frame.origin.y = headerHeight
         headerView?.frame.origin.y = 0
         contentView.scroll(to: NSZeroPoint)
         guard let target = xc_target else { return  }
@@ -71,11 +74,11 @@ extension XCPullRefreshScrollView{
     
     func stopHeaderRefresh()  {
         isRefreshing = false
-        NSAnimationContext.runAnimationGroup({ (animationContext) in
-            animationContext.duration = 0.5
-            headerView?.animator().frame.origin.y = -headerHeight
-            documentView?.animator().setFrameOrigin(NSZeroPoint)
-        }, completionHandler: nil)
+        
+        headerView?.frame.origin.y = -headerHeight
+        documentView?.frame.origin.y = 0
+        
+
     }
     
     func xc_headerRefreshTarget(_ target: AnyObject? ,action : Selector) {

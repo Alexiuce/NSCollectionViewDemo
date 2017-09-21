@@ -15,17 +15,16 @@ let reusedKey = "homeCell"
 class HomeViewController: NSViewController {
 
     @IBOutlet weak var tableView: NSTableView!         // NSTableView
+    @IBOutlet weak var scrollView: XCPullRefreshScrollView!
     
     var statuses : [WBStatus] = []
     
     var currentSelectView : HomeCellView?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-    
-        
         NotificationCenter.default.addObserver(self, selector: #selector(handleTableViewResize), name: .NSViewFrameDidChange, object: tableView)
+        
+        scrollView.xc_headerRefreshTarget(self, action: #selector(reloadHeader))
         
         HTTPManager.getWBStatus { (dict) in
             self.statuses = WBStatus.statusesFromDicts(dict?["statuses"] as! [[String : Any]])
@@ -62,7 +61,6 @@ extension HomeViewController : NSTableViewDelegate{
 
     }
     
-    
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         let cell = tableView.make(withIdentifier: reusedKey, owner: self) as! HomeCellView
         
@@ -86,5 +84,17 @@ extension HomeViewController : NSTableViewDelegate{
         currentSelectView = selectView
         
     }
-    
 }
+
+// MARK: Refresh method
+extension HomeViewController{
+    func reloadHeader() {
+        
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.scrollView.stopHeaderRefresh()
+        }
+    }
+}
+

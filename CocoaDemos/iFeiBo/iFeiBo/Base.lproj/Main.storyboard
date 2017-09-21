@@ -910,6 +910,7 @@ you can see it just for logout your account</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="scrollView" destination="efW-KQ-8wX" id="eW3-Ac-qMv"/>
                         <outlet property="tableView" destination="WeX-jv-uij" id="AwA-4x-zPR"/>
                     </connections>
                 </viewController>

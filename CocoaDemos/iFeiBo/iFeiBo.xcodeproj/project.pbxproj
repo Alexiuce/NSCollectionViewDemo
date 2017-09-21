@@ -412,14 +412,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
+					"-D",
+					DEBUG,
 					"-framework",
 					"\"Alamofire\"",
 					"-framework",
 					"\"Kingfisher\"",
 					"-framework",
 					"\"MJExtension\"",
-					"-D",
-					DEBUG,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexiuce.iFeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
