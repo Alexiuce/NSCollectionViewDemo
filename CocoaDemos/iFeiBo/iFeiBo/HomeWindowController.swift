@@ -24,6 +24,14 @@ class HomeWindowController: NSWindowController {
         
         appDelegate.currentWindow = window
         appDelegate.windowController = self
+        
+        let themeView = window?.standardWindowButton(.closeButton)?.superview
+        
+        let visualView = NSVisualEffectView(frame: themeView!.bounds)
+        visualView.autoresizingMask = [.viewWidthSizable]
+        themeView?.addSubview(visualView, positioned: .below, relativeTo: window?.standardWindowButton(.closeButton))
+       
+
     }
     deinit {
         print("home deinit app windows \(NSApp.windows)")

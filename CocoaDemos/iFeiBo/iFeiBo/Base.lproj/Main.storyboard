@@ -768,33 +768,20 @@ you can see it just for logout your account</string>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="458" y="360" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
-                        <toolbar key="toolbar" implicitIdentifier="3FAF173F-EC01-4435-9807-6A22A2563A7D" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconOnly" sizeMode="small" id="ZXW-9K-Wng">
+                        <toolbar key="toolbar" implicitIdentifier="F4A6C7F9-B477-4E70-AC1B-79B90859AE3F" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconOnly" sizeMode="small" id="hQP-o9-m3l">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="E5714711-DF51-4E44-A130-E4D102CC6F0B" label="" paletteLabel="" tag="-1" image="NSListViewTemplate" selectable="YES" id="1el-eD-FD5">
-                                    <connections>
-                                        <action selector="showFavourite:" target="0E9-7k-r0s" id="GVG-gm-cyr"/>
-                                    </connections>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="9BFAF6D5-76F9-4417-9295-B9049F0F3B60" label="" paletteLabel="" tag="-1" image="NSLockLockedTemplate" selectable="YES" id="wGu-XC-3h2">
-                                    <connections>
-                                        <action selector="showProfile:" target="0E9-7k-r0s" id="HQA-xi-1Ck"/>
-                                    </connections>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="7063B118-284F-43D4-9298-5A3E3DFEDDFC" label="" paletteLabel="" tag="-1" image="NSHomeTemplate" selectable="YES" id="NmO-c0-QST">
-                                    <connections>
-                                        <action selector="showHome:" target="0E9-7k-r0s" id="j7J-2W-VjL"/>
-                                    </connections>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="NNa-Nt-SdX"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="ASa-bT-s0i"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="UQO-si-mnz"/>
+                                <toolbarItem implicitItemIdentifier="A6536F8B-71D3-47BF-A1AE-F2267C21E841" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="statusIcon" id="cYy-Nc-VWb"/>
+                                <toolbarItem implicitItemIdentifier="39C07265-2815-4B39-B661-5252CE557F05" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="NSUserGuest" id="wvU-xG-Vr7"/>
+                                <toolbarItem implicitItemIdentifier="8C87E450-FC0A-4A34-BF15-6624C7B7DB7A" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="NSUserGroup" id="KM4-4Z-CQQ"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="NNa-Nt-SdX"/>
-                                <toolbarItem reference="NmO-c0-QST"/>
-                                <toolbarItem reference="NNa-Nt-SdX"/>
-                                <toolbarItem reference="wGu-XC-3h2"/>
-                                <toolbarItem reference="NNa-Nt-SdX"/>
-                                <toolbarItem reference="1el-eD-FD5"/>
-                                <toolbarItem reference="NNa-Nt-SdX"/>
+                                <toolbarItem reference="UQO-si-mnz"/>
+                                <toolbarItem reference="cYy-Nc-VWb"/>
+                                <toolbarItem reference="wvU-xG-Vr7"/>
+                                <toolbarItem reference="KM4-4Z-CQQ"/>
+                                <toolbarItem reference="UQO-si-mnz"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
@@ -971,8 +958,8 @@ you can see it just for logout your account</string>
     <resources>
         <image name="NSApplicationIcon" width="128" height="128"/>
         <image name="NSComputer" width="32" height="32"/>
-        <image name="NSHomeTemplate" width="14" height="14"/>
-        <image name="NSListViewTemplate" width="14" height="10"/>
-        <image name="NSLockLockedTemplate" width="10" height="14"/>
+        <image name="NSUserGroup" width="32" height="32"/>
+        <image name="NSUserGuest" width="32" height="32"/>
+        <image name="statusIcon" width="20" height="20"/>
     </resources>
 </document>
