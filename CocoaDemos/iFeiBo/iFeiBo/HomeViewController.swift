@@ -90,9 +90,13 @@ extension HomeViewController : NSTableViewDelegate{
 extension HomeViewController{
     func reloadHeader() {
         
+         XCPring("START REFRESH")
+       guard let loadID = statuses.first?.id  else { return  }
         
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        HTTPManager.getWBStatus(loadID) { (dict) in
+            let newWBStatus = WBStatus.statusesFromDicts(dict?["statuses"] as! [[String : Any]] )
+            self.statuses = newWBStatus + self.statuses
+            self.tableView.reloadData()
             self.scrollView.stopHeaderRefresh()
         }
     }

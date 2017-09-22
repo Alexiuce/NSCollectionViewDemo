@@ -62,7 +62,7 @@ extension XCPullRefreshScrollView{
     }
     
     fileprivate func startRefreshing(){
-        XCPring("START REFRESH")
+       
         isRefreshing = true
         documentView?.frame.origin.y = headerHeight
         headerView?.frame.origin.y = 0
