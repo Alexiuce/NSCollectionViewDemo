@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
-        let isLogin = UserDefaults.standard.bool(forKey:kFBLoginStatusKey) && UAToolManager.defaultManager.userAccount != nil
+        let isLogin = UAToolManager.defaultManager.isLogin
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         if isLogin {
             
@@ -77,8 +77,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction func logoutAccount(_ sender: NSMenuItem) {
         
-        UserDefaults.standard.set(false, forKey: kFBLoginStatusKey)
-        UserDefaults.standard.synchronize()
+
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let loginController = storyboard.instantiateController(withIdentifier: kFBLoginConttollerID) as! LoginWindowController
         loginController.window?.makeKeyAndOrderFront(nil)
