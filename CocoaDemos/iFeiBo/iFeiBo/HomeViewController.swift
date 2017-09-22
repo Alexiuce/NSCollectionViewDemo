@@ -11,33 +11,37 @@ import Alamofire
 
 
 let reusedKey = "homeCell"
+let friendReusedKey = "friendCell"
 
 class HomeViewController: NSViewController {
+    
+    @IBOutlet weak var friendsTableView: NSTableView!
 
-    @IBOutlet weak var tableView: NSTableView!         // NSTableView
+    @IBOutlet weak var homeTableView: NSTableView!         // NSTableView
     @IBOutlet weak var scrollView: XCPullRefreshScrollView!
     
     var statuses : [WBStatus] = []
+    var friends : [WBStatusUser] = []
     
     var currentSelectView : HomeCellView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleTableViewResize), name: .NSViewFrameDidChange, object: tableView)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTableViewResize), name: .NSViewFrameDidChange, object: homeTableView)
         
         scrollView.xc_headerRefreshTarget(self, action: #selector(reloadHeader))
         
         HTTPManager.getWBStatus { (dict) in
             self.statuses = WBStatus.statusesFromDicts(dict?["statuses"] as! [[String : Any]])
-            self.tableView.reloadData()
+            self.homeTableView.reloadData()
         }
     }
     
     func handleTableViewResize(){
       
-            let indexes = IndexSet(integersIn: 0..<tableView.numberOfRows)
+            let indexes = IndexSet(integersIn: 0..<homeTableView.numberOfRows)
             NSAnimationContext.beginGrouping()
             NSAnimationContext.current().duration = 0
-            tableView.noteHeightOfRows(withIndexesChanged: indexes)
+            homeTableView.noteHeightOfRows(withIndexesChanged: indexes)
             NSAnimationContext.endGrouping()
     }
 }
@@ -45,7 +49,7 @@ class HomeViewController: NSViewController {
 // MARK: - NSTableViewDataSource
 extension HomeViewController : NSTableViewDataSource{
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return statuses.count
+        return tableView == homeTableView ? statuses.count : friends.count
     }
     
 }
@@ -54,14 +58,22 @@ extension HomeViewController : NSTableViewDelegate{
 
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        // friend tableView
+        if tableView == friendsTableView {
+            let cell = tableView.make(withIdentifier: friendReusedKey, owner: self) as! FridendsCellView
+            return cell
+        }
+        // home tableView
         let cell = tableView.make(withIdentifier: reusedKey, owner: self) as! HomeCellView
-        
         cell.status = statuses[row]
         return cell
 
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        // friend
+        if tableView == friendsTableView {return 60}
+        // home
         let cell = tableView.make(withIdentifier: reusedKey, owner: self) as! HomeCellView
         
         cell.status = statuses[row]
@@ -76,13 +88,19 @@ extension HomeViewController : NSTableViewDelegate{
     }
     
     func tableViewSelectionDidChange(_ notification: Notification) {
-        guard let selectView = tableView.view(atColumn: 0, row: tableView.selectedRow, makeIfNecessary: false) as? HomeCellView else {return}
+        if let tableView = notification.object as? NSTableView {
+            if tableView == friendsTableView {
+                
+                return
+            }
+        }
+        
+        guard let selectView = homeTableView.view(atColumn: 0, row: homeTableView.selectedRow, makeIfNecessary: false) as? HomeCellView else {return}
         if let currentSelectView = currentSelectView {
             currentSelectView.backgroundStyle = .light
         }
         selectView.backgroundStyle = .dark
         currentSelectView = selectView
-        
     }
 }
 
@@ -96,7 +114,7 @@ extension HomeViewController{
         HTTPManager.getWBStatus(loadID) { (dict) in
             let newWBStatus = WBStatus.statusesFromDicts(dict?["statuses"] as! [[String : Any]] )
             self.statuses = newWBStatus + self.statuses
-            self.tableView.reloadData()
+            self.homeTableView.reloadData()
             self.scrollView.stopHeaderRefresh()
         }
     }

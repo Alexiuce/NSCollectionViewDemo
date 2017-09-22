@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
-        let isLogin = UserDefaults.standard.bool(forKey:kFBLoginStatusKey )
+        let isLogin = UserDefaults.standard.bool(forKey:kFBLoginStatusKey) && UAToolManager.defaultManager.userAccount != nil
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         if isLogin {
             

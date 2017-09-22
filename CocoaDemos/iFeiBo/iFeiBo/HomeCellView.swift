@@ -14,14 +14,17 @@ class HomeCellView: NSTableCellView {
     
     @IBOutlet weak var textLabel: NSTextField!
     
+    @IBOutlet weak var nameLabel: NSTextField!
 
+    @IBOutlet weak var timeLabel: NSTextField!
     
     var status : WBStatus? {
         didSet{
-        
+            timeLabel.stringValue = status?.created_at ?? ""
+            nameLabel.stringValue = status?.user?.name ?? ""
+            textLabel.stringValue = status?.text ?? ""
             guard let url = status?.user?.avatar_hd else { return  }
             headImageView.kf.setImage(with: URL(string: url))
-            textLabel.stringValue = status?.text ?? ""
         }
     }
     

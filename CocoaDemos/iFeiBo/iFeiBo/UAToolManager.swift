@@ -9,15 +9,15 @@
 import Cocoa
 
 class UAToolManager: NSObject {
-    
     static let defaultManager = UAToolManager()
+    
+    fileprivate let filePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last! + "/userAccount.dat"
     lazy var userAccount : UserAccount? = {
         guard let account = NSKeyedUnarchiver.unarchiveObject(withFile: self.filePath) as? UserAccount else { return nil}
 
         return account
     }()
     
-    fileprivate let filePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last! + "/userAccount.dat"
     
     func saveUserAccount(_ account : UserAccount) -> Bool {
         

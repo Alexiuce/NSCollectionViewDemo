@@ -26,6 +26,7 @@
 		F201720A1F6FB153007F9581 /* HomeStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F20172091F6FB153007F9581 /* HomeStatusView.xib */; };
 		F201720C1F70BD95007F9581 /* HomeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F201720B1F70BD95007F9581 /* HomeCellView.swift */; };
 		F24BC81A1F723F9F00EEA2D8 /* XCPullRefreshScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24BC8191F723F9F00EEA2D8 /* XCPullRefreshScrollView.swift */; };
+		F2C539911F74FC3F0045B6FE /* FridendsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C539901F74FC3F0045B6FE /* FridendsCellView.swift */; };
 		F2FBB0961F6F63AA00F18014 /* UAToolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FBB0951F6F63AA00F18014 /* UAToolManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		F20172091F6FB153007F9581 /* HomeStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeStatusView.xib; sourceTree = "<group>"; };
 		F201720B1F70BD95007F9581 /* HomeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCellView.swift; sourceTree = "<group>"; };
 		F24BC8191F723F9F00EEA2D8 /* XCPullRefreshScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCPullRefreshScrollView.swift; sourceTree = "<group>"; };
+		F2C539901F74FC3F0045B6FE /* FridendsCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FridendsCellView.swift; sourceTree = "<group>"; };
 		F2FBB0951F6F63AA00F18014 /* UAToolManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UAToolManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 				D87A1CFD1F6CBD2B00F2D999 /* HomeViewController.swift */,
 				F24BC8191F723F9F00EEA2D8 /* XCPullRefreshScrollView.swift */,
 				F201720B1F70BD95007F9581 /* HomeCellView.swift */,
+				F2C539901F74FC3F0045B6FE /* FridendsCellView.swift */,
 				F20172071F6FB13C007F9581 /* HomeStatusView.swift */,
 				F20172091F6FB153007F9581 /* HomeStatusView.xib */,
 				F20172011F6F99BA007F9581 /* HTTPManager.swift */,
@@ -175,6 +178,7 @@
 				TargetAttributes = {
 					D87A1CE41F6CB32000F2D999 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = Z6P4JKNFHR;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -286,6 +290,7 @@
 				D87A1CE91F6CB32000F2D999 /* AppDelegate.swift in Sources */,
 				F20172041F6FA1C6007F9581 /* WBStatus.swift in Sources */,
 				F20172081F6FB13C007F9581 /* HomeStatusView.swift in Sources */,
+				F2C539911F74FC3F0045B6FE /* FridendsCellView.swift in Sources */,
 				F20172021F6F99BA007F9581 /* HTTPManager.swift in Sources */,
 				F201720C1F70BD95007F9581 /* HomeCellView.swift in Sources */,
 				D87A1CFE1F6CBD2B00F2D999 /* HomeViewController.swift in Sources */,
@@ -406,7 +411,9 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFeiBo/iFeiBo.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z6P4JKNFHR;
 				HEADER_SEARCH_PATHS = "\"${SRCROOT}/**";
 				INFOPLIST_FILE = iFeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -423,6 +430,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexiuce.iFeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -434,7 +442,9 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFeiBo/iFeiBo.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z6P4JKNFHR;
 				HEADER_SEARCH_PATHS = "\"${SRCROOT}/**";
 				INFOPLIST_FILE = iFeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -449,6 +459,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexiuce.iFeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
