@@ -28,7 +28,7 @@ class HomeWindowController: NSWindowController {
         let themeView = window?.standardWindowButton(.closeButton)?.superview
         
         let visualView = NSVisualEffectView(frame: themeView!.bounds)
-        visualView.autoresizingMask = [.viewWidthSizable]
+        visualView.autoresizingMask = [.viewWidthSizable,.viewHeightSizable]
         themeView?.addSubview(visualView, positioned: .below, relativeTo: window?.standardWindowButton(.closeButton))
        
 
