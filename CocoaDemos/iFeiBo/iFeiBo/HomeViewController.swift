@@ -20,6 +20,8 @@ class HomeViewController: NSViewController {
     @IBOutlet weak var homeTableView: NSTableView!         // NSTableView
     @IBOutlet weak var scrollView: XCPullRefreshScrollView!
     
+    
+
     var statuses : [WBStatus] = []
     var friends : [WBStatusUser] = []
     
@@ -107,8 +109,7 @@ extension HomeViewController : NSTableViewDelegate{
 // MARK: Refresh method
 extension HomeViewController{
     func reloadHeader() {
-        
-         XCPring("START REFRESH")
+
        guard let loadID = statuses.first?.id  else { return  }
         
         HTTPManager.getWBStatus(loadID) { (dict) in
