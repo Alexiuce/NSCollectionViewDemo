@@ -11,11 +11,23 @@ import MJExtension
 
 class WBStatus: NSObject {
 
-    var created_at = ""
+    var created_at = ""{
+        didSet{
+            createdString = created_at.convertWBTime()
+        }
+    }
     var text = ""
     var id : Int64 = 0
+    var source = "" { // 微博来源
+        didSet{
+           sourceText = source.getTagAHtmlText()
+        }
+    }
     var user : WBStatusUser?
     
+    
+    var sourceText = ""
+    var createdString = ""
     override init() {
         super.init()
     }

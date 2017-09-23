@@ -22,7 +22,6 @@ class UAToolManager {
     var isLogin : Bool {
         guard let account = userAccount else { return false }
         guard let expire_date = account.expires_date else { return false }
-        XCPring(expire_date)
         return expire_date.compare(Date()) == ComparisonResult.orderedDescending
     }
     

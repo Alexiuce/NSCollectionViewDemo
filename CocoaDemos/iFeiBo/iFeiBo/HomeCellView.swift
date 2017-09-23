@@ -18,13 +18,18 @@ class HomeCellView: NSTableCellView {
 
     @IBOutlet weak var timeLabel: NSTextField!
     
+    @IBOutlet weak var sourceLabel: NSTextField!
+    
+    
     var status : WBStatus? {
         didSet{
-            timeLabel.stringValue = status?.created_at ?? ""
-            nameLabel.stringValue = status?.user?.name ?? ""
-            textLabel.stringValue = status?.text ?? ""
-            guard let url = status?.user?.avatar_hd else { return  }
+            guard let status = status else { return  }
+            timeLabel.stringValue = status.createdString
+            nameLabel.stringValue = status.user?.name ?? ""
+            textLabel.stringValue = status.text 
+            guard let url = status.user?.avatar_hd else { return  }
             headImageView.kf.setImage(with: URL(string: url))
+            sourceLabel.stringValue = status.sourceText
         }
     }
     
