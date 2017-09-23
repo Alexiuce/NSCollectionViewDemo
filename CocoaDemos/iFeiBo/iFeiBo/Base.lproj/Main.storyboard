@@ -889,6 +889,22 @@ you can see it just for logout your account</string>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
+                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MTj-O9-K4e">
+                                                                    <rect key="frame" x="114" y="108" width="14" height="14"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="14" id="Gbd-b6-4Yg"/>
+                                                                        <constraint firstAttribute="height" constant="14" id="xpn-fj-Yuc"/>
+                                                                    </constraints>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="h4F-gA-pca"/>
+                                                                </imageView>
+                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wbX-nf-zbk">
+                                                                    <rect key="frame" x="34" y="76" width="17" height="17"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="17" id="eFG-oh-1r6"/>
+                                                                        <constraint firstAttribute="height" constant="17" id="ib8-GK-Il3"/>
+                                                                    </constraints>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="avatar_enterprise_vip" id="gsa-cD-du0"/>
+                                                                </imageView>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="N5p-ND-oin" secondAttribute="bottom" id="1gb-xf-2vF"/>
@@ -896,15 +912,19 @@ you can see it just for logout your account</string>
                                                                 <constraint firstItem="N5p-ND-oin" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" id="2ry-7a-ZEI"/>
                                                                 <constraint firstItem="DXl-m1-5a6" firstAttribute="leading" secondItem="0SV-oZ-zQY" secondAttribute="trailing" constant="10" id="5cA-z5-OMv"/>
                                                                 <constraint firstItem="Ewy-EE-FvX" firstAttribute="top" secondItem="DXl-m1-5a6" secondAttribute="top" id="7Sa-J1-NNV"/>
+                                                                <constraint firstItem="wbX-nf-zbk" firstAttribute="trailing" secondItem="0SV-oZ-zQY" secondAttribute="trailing" id="85m-9F-dDs"/>
                                                                 <constraint firstAttribute="trailing" secondItem="J0x-7E-hgb" secondAttribute="trailing" constant="3" id="9Wh-ej-hzc"/>
                                                                 <constraint firstItem="0SV-oZ-zQY" firstAttribute="top" secondItem="HWR-T0-OaU" secondAttribute="top" constant="3" id="A8T-FU-VdN"/>
                                                                 <constraint firstItem="0SV-oZ-zQY" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="3" id="EBi-Bk-Z7s"/>
+                                                                <constraint firstItem="MTj-O9-K4e" firstAttribute="leading" secondItem="x7n-Qe-xjC" secondAttribute="trailing" constant="15" id="IJy-7C-JdT"/>
                                                                 <constraint firstItem="1u8-St-Lgc" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="3" id="O0f-NG-cW8"/>
                                                                 <constraint firstItem="DXl-m1-5a6" firstAttribute="top" secondItem="x7n-Qe-xjC" secondAttribute="bottom" constant="8" id="Opb-qT-jAh"/>
                                                                 <constraint firstItem="N5p-ND-oin" firstAttribute="top" secondItem="1u8-St-Lgc" secondAttribute="bottom" constant="2" id="RvM-oh-5KA"/>
                                                                 <constraint firstItem="1u8-St-Lgc" firstAttribute="top" secondItem="J0x-7E-hgb" secondAttribute="bottom" constant="8" id="XJL-28-Od0"/>
+                                                                <constraint firstItem="MTj-O9-K4e" firstAttribute="centerY" secondItem="x7n-Qe-xjC" secondAttribute="centerY" id="bkr-Is-kva"/>
                                                                 <constraint firstItem="x7n-Qe-xjC" firstAttribute="top" secondItem="HWR-T0-OaU" secondAttribute="top" constant="3" id="bri-rm-gUd"/>
                                                                 <constraint firstItem="J0x-7E-hgb" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="3" id="cdi-qC-RAM"/>
+                                                                <constraint firstItem="wbX-nf-zbk" firstAttribute="bottom" secondItem="0SV-oZ-zQY" secondAttribute="bottom" id="gGS-CI-OUV"/>
                                                                 <constraint firstItem="Ewy-EE-FvX" firstAttribute="leading" secondItem="DXl-m1-5a6" secondAttribute="trailing" constant="20" id="sXZ-fz-um4"/>
                                                                 <constraint firstItem="x7n-Qe-xjC" firstAttribute="leading" secondItem="0SV-oZ-zQY" secondAttribute="trailing" constant="8" id="vn9-FX-P1r"/>
                                                                 <constraint firstAttribute="trailing" secondItem="1u8-St-Lgc" secondAttribute="trailing" constant="3" id="wMW-xD-Ved"/>
@@ -913,9 +933,11 @@ you can see it just for logout your account</string>
                                                             <connections>
                                                                 <outlet property="headImageView" destination="0SV-oZ-zQY" id="BbN-4B-ifn"/>
                                                                 <outlet property="nameLabel" destination="x7n-Qe-xjC" id="90B-e9-hfq"/>
+                                                                <outlet property="rankImageView" destination="MTj-O9-K4e" id="5dw-1v-amS"/>
                                                                 <outlet property="sourceLabel" destination="Ewy-EE-FvX" id="DR0-Bu-eBI"/>
                                                                 <outlet property="textLabel" destination="J0x-7E-hgb" id="wJe-Ts-w8Q"/>
                                                                 <outlet property="timeLabel" destination="DXl-m1-5a6" id="pAp-7T-t2a"/>
+                                                                <outlet property="vipImageView" destination="wbX-nf-zbk" id="4Gl-cE-Odo"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -1081,6 +1103,7 @@ you can see it just for logout your account</string>
         <image name="NSComputer" width="32" height="32"/>
         <image name="NSUserGroup" width="32" height="32"/>
         <image name="NSUserGuest" width="32" height="32"/>
+        <image name="avatar_enterprise_vip" width="17" height="17"/>
         <image name="statusIcon" width="20" height="20"/>
     </resources>
 </document>

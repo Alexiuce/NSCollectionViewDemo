@@ -28,6 +28,8 @@ class WBStatus: NSObject {
     
     var sourceText = ""
     var createdString = ""
+    
+    
     override init() {
         super.init()
     }
