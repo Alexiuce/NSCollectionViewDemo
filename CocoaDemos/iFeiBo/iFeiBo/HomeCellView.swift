@@ -23,6 +23,7 @@ class HomeCellView: NSTableCellView {
     
     @IBOutlet weak var rankImageView: NSImageView!  // 认证
   
+    @IBOutlet weak var pictureView: PicsView!
     
     @IBOutlet weak var picWidthCons: NSLayoutConstraint!            // 配图宽度约束
     @IBOutlet weak var picHeightCons: NSLayoutConstraint!           // 配图高度约束
@@ -48,38 +49,9 @@ class HomeCellView: NSTableCellView {
             default:
                 vipImageView.image = nil
             }
-            
-            guard let pics = status.pic_urls else {
-                picHeightCons.constant = 0
-                picWidthCons.constant = 0
-                return
-            }
-            let margin : CGFloat = 10
-            var wh : CGSize = NSZeroSize
-            var imgWH : CGFloat = 0
-            switch pics.count {
-            case 0 :
-                wh = NSZeroSize
-                imgWH = 0
-            case 1 :
-                wh = NSMakeSize(80, 80)
-                imgWH = 80 - 1
-            case 4:
-                wh = NSMakeSize(170, 170)  //80 * 2 + margin
-                imgWH = 80 - 1
-            default:
-                let w = bounds.width - 2 * margin               // 宽度
-                let col : CGFloat = pics.count == 2 ? 1 : 2     // 列数
-                imgWH = (w - col * margin) / (col + 1)   - 1   // item宽度
-                let row = CGFloat((pics.count - 1) / 3 + 1)     // 行数
-                let h = row * imgWH + (row - 1) * margin        // 高度
-                wh = NSMakeSize(w, h)
-            }
-            
-            XCPring("change bounds \(NSStringFromRect(bounds))")
-            
-            picWidthCons.constant = wh.width
-            picHeightCons.constant = wh.height
+            pictureView.picUrls = status.picURL
+            picWidthCons.constant = pictureView.caculateSize.width
+            picHeightCons.constant = pictureView.caculateSize.height
         }
     }
     

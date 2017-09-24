@@ -857,7 +857,7 @@ you can see it just for logout your account</string>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="pLD-E6-QvN"/>
                                                                     </constraints>
-                                                                    <color key="fillColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="fillColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                                                                 </box>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7n-Qe-xjC">
                                                                     <rect key="frame" x="57" y="179" width="44" height="19"/>
@@ -949,6 +949,7 @@ you can see it just for logout your account</string>
                                                                 <outlet property="nameLabel" destination="x7n-Qe-xjC" id="90B-e9-hfq"/>
                                                                 <outlet property="picHeightCons" destination="Jpf-db-kI8" id="4Nw-ao-TgK"/>
                                                                 <outlet property="picWidthCons" destination="hfo-d0-3EE" id="Ul9-X1-PvJ"/>
+                                                                <outlet property="pictureView" destination="Nav-pA-LP8" id="kWx-kO-6SC"/>
                                                                 <outlet property="rankImageView" destination="MTj-O9-K4e" id="5dw-1v-amS"/>
                                                                 <outlet property="sourceLabel" destination="Ewy-EE-FvX" id="DR0-Bu-eBI"/>
                                                                 <outlet property="textLabel" destination="J0x-7E-hgb" id="wJe-Ts-w8Q"/>

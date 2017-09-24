@@ -25,11 +25,20 @@ class WBStatus: NSObject {
     }
     var user : WBStatusUser?        // 微博用户
     
-    var pic_urls : [[String : String]]?   // 配图数组
-    
+    var pic_urls : [[String : String]]?  { // 配图数组
+        didSet{
+            guard let urls = pic_urls else {return}
+            for dict in urls {
+                let urlText = dict["thumbnail_pic"]!
+                let url = URL(string: urlText)!
+                picURL.append(url)
+            }
+            
+        }
+    }
     var sourceText = ""
     var createdString = ""
-    
+    var picURL : [URL] = []
     
     override init() {
         super.init()
