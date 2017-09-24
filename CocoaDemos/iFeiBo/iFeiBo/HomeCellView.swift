@@ -49,25 +49,39 @@ class HomeCellView: NSTableCellView {
                 vipImageView.image = nil
             }
             
-            guard let pics = status.pic_urls else { return  }
-            
-            let picSize = caculatePicCollectionSize(pics.count)
-        
-            picWidthCons.constant = picSize.width
-            picHeightCons.constant = picSize.height
+            guard let pics = status.pic_urls else {
+                picHeightCons.constant = 0
+                picWidthCons.constant = 0
+                return
+            }
             let margin : CGFloat = 10
-            let imgWH = (bounds.width - 4 * margin ) / 3
-            let flowLayout = imgCollectionView.collectionViewLayout as! NSCollectionViewFlowLayout
-            if pics.count == 1 {
-                flowLayout.itemSize = NSMakeSize(80, 80)
-            }else{
-                flowLayout.itemSize = NSMakeSize(imgWH, imgWH)
+            var wh : CGSize = NSZeroSize
+            var imgWH : CGFloat = 0
+            switch pics.count {
+            case 0 :
+                wh = NSZeroSize
+                imgWH = 0
+            case 1 :
+                wh = NSMakeSize(80, 80)
+                imgWH = 80 - 1
+            case 4:
+                wh = NSMakeSize(170, 170)  //80 * 2 + margin
+                imgWH = 80 - 1
+            default:
+                let w = bounds.width - 2 * margin               // 宽度
+                let col : CGFloat = pics.count == 2 ? 1 : 2     // 列数
+                imgWH = (w - col * margin) / (col + 1)   - 1   // item宽度
+                let row = CGFloat((pics.count - 1) / 3 + 1)     // 行数
+                let h = row * imgWH + (row - 1) * margin        // 高度
+                wh = NSMakeSize(w, h)
             }
             
-            XCPring("pic count = \(pics.count),pic size = \(picSize)")
             
-            
-            
+            picWidthCons.constant = wh.width
+            picHeightCons.constant = wh.height
+            let flowLayout = imgCollectionView.collectionViewLayout as! NSCollectionViewFlowLayout
+            flowLayout.minimumInteritemSpacing = margin
+            flowLayout.itemSize = NSMakeSize(imgWH, imgWH)
         }
     }
     
@@ -94,9 +108,6 @@ class HomeCellView: NSTableCellView {
         imgCollectionView.register(PictureColletionItem.self, forItemWithIdentifier: "pictures")
         imgCollectionView.dataSource = self
         imgCollectionView.delegate = self
-  
-      
-        
     }
 }
 
@@ -117,24 +128,6 @@ extension HomeCellView : NSCollectionViewDelegate{
 }
 
 
-extension HomeCellView{
-    fileprivate func caculatePicCollectionSize(_ pics :Int ) -> NSSize{
-        if pics == 0 {return NSZeroSize}
-    
-        if pics == 1 {return NSMakeSize(80, 80)}
-        let margin : CGFloat = 10   // 间距
-        let imgWH = (bounds.width - 4 * margin ) / 3
-        if pics == 4 {
-            let pWidth = imgWH * 2 + 10
-            return NSMakeSize(pWidth, pWidth)
-        }
-        
-        
-        let rows =  CGFloat((pics - 1) / 3 + 1)
-        let width = bounds.width - 20
-        let height = rows * imgWH + (rows - 1) * 10
-        return NSMakeSize(width, height)
-    }
-}
+
 
 
