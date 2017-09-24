@@ -36,6 +36,9 @@ class WBStatus: NSObject {
             
         }
     }
+    
+    var retweeted_status : WBStatus?            // 转发微博
+    
     var sourceText = ""
     var createdString = ""
     var picURL : [URL] = []

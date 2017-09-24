@@ -33,11 +33,7 @@ class PicsView: NSView {
             default:
                 // 计算行数
                 let row = CGFloat((imgCount - 1) / 3 + 1)
-                caculateSize = NSMakeSize(kPicuterWH * 3 + kMargin * 2, kPicuterWH * row + (row - 1) * kMargin)
-                if imgCount == 3 {
-                    XCPring("stop")
-                }
-                
+                caculateSize = NSMakeSize(kPicuterWH * 3 + kMargin * 2, kPicuterWH * row + (row - 1) * kMargin)                
             }
             
         
@@ -53,9 +49,7 @@ class PicsView: NSView {
                 addSubview(imageView)
                
                 imageView.kf.setImage(with: picUrls[i])
-                
             }
-            
         }
     }
     
