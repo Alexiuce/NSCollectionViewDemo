@@ -22,7 +22,7 @@ class HomeCellView: NSTableCellView {
     @IBOutlet weak var vipImageView: NSImageView!   // vip
     
     @IBOutlet weak var rankImageView: NSImageView!  // 认证
-    @IBOutlet weak var imgCollectionView: NSCollectionView!         // 配图collectionView
+  
     
     @IBOutlet weak var picWidthCons: NSLayoutConstraint!            // 配图宽度约束
     @IBOutlet weak var picHeightCons: NSLayoutConstraint!           // 配图高度约束
@@ -76,12 +76,10 @@ class HomeCellView: NSTableCellView {
                 wh = NSMakeSize(w, h)
             }
             
+            XCPring("change bounds \(NSStringFromRect(bounds))")
             
             picWidthCons.constant = wh.width
             picHeightCons.constant = wh.height
-            let flowLayout = imgCollectionView.collectionViewLayout as! NSCollectionViewFlowLayout
-            flowLayout.minimumInteritemSpacing = margin
-            flowLayout.itemSize = NSMakeSize(imgWH, imgWH)
         }
     }
     
@@ -105,27 +103,11 @@ class HomeCellView: NSTableCellView {
     override func awakeFromNib() {
         super.awakeFromNib()
         wantsLayer = true
-        imgCollectionView.register(PictureColletionItem.self, forItemWithIdentifier: "pictures")
-        imgCollectionView.dataSource = self
-        imgCollectionView.delegate = self
+   
     }
 }
 
-extension HomeCellView : NSCollectionViewDataSource{
-    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return status?.pic_urls?.count ?? 0
-    }
-    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        
-        let item = collectionView.makeItem(withIdentifier: "pictures", for: indexPath) as! PictureColletionItem
-        return item
-        
-    }
-    
-}
-extension HomeCellView : NSCollectionViewDelegate{
-    
-}
+
 
 
 

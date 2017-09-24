@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		53E28E0B43B7ADBEDE9CA297 /* Pods_iFeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D85735BAAADC54C6278F0A /* Pods_iFeiBo.framework */; };
+		D800ED171F777845009ECBA9 /* PicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800ED161F777845009ECBA9 /* PicsView.swift */; };
 		D80A7C521F6E3F0E0023B175 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A7C511F6E3F0E0023B175 /* UserAccount.swift */; };
 		D87A1CE91F6CB32000F2D999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A1CE81F6CB32000F2D999 /* AppDelegate.swift */; };
 		D87A1CED1F6CB32000F2D999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87A1CEC1F6CB32000F2D999 /* Assets.xcassets */; };
@@ -18,8 +19,6 @@
 		D87A1CFE1F6CBD2B00F2D999 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A1CFD1F6CBD2B00F2D999 /* HomeViewController.swift */; };
 		D87A1D011F6CCAA200F2D999 /* ConstantKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A1D001F6CCAA200F2D999 /* ConstantKey.swift */; };
 		D8B34FE21F7633EE00FAB90A /* String-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B34FE11F7633EE00FAB90A /* String-Extension.swift */; };
-		D8B34FE91F767A1100FAB90A /* PictureColletionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B34FE71F767A1100FAB90A /* PictureColletionItem.swift */; };
-		D8B34FEA1F767A1100FAB90A /* PictureColletionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B34FE81F767A1100FAB90A /* PictureColletionItem.xib */; };
 		D8DD7E661F6DFF770029D27E /* WebLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DD7E651F6DFF770029D27E /* WebLogin.storyboard */; };
 		D8DD7E691F6E00020029D27E /* WebLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD7E681F6E00020029D27E /* WebLoginViewController.swift */; };
 		F20172021F6F99BA007F9581 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20172011F6F99BA007F9581 /* HTTPManager.swift */; };
@@ -37,6 +36,7 @@
 		26D85735BAAADC54C6278F0A /* Pods_iFeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EF7649B5B77774A69E2E3A /* Pods-iFeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFeiBo/Pods-iFeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		8112D1526EF802B7BF36A377 /* Pods-iFeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFeiBo/Pods-iFeiBo.release.xcconfig"; sourceTree = "<group>"; };
+		D800ED161F777845009ECBA9 /* PicsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicsView.swift; sourceTree = "<group>"; };
 		D80A7C511F6E3F0E0023B175 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		D87A1CE51F6CB32000F2D999 /* iFeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A1CE81F6CB32000F2D999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,8 +50,6 @@
 		D87A1CFF1F6CC1DF00F2D999 /* iFeiBo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFeiBo.entitlements; sourceTree = "<group>"; };
 		D87A1D001F6CCAA200F2D999 /* ConstantKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantKey.swift; sourceTree = "<group>"; };
 		D8B34FE11F7633EE00FAB90A /* String-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Extension.swift"; sourceTree = "<group>"; };
-		D8B34FE71F767A1100FAB90A /* PictureColletionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureColletionItem.swift; sourceTree = "<group>"; };
-		D8B34FE81F767A1100FAB90A /* PictureColletionItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureColletionItem.xib; sourceTree = "<group>"; };
 		D8DD7E651F6DFF770029D27E /* WebLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebLogin.storyboard; sourceTree = "<group>"; };
 		D8DD7E681F6E00020029D27E /* WebLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLoginViewController.swift; sourceTree = "<group>"; };
 		F20172011F6F99BA007F9581 /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
@@ -124,10 +122,9 @@
 				D87A1CFB1F6CBD1600F2D999 /* LoginViewController.swift */,
 				D87A1CF91F6CB3B800F2D999 /* HomeWindowController.swift */,
 				D87A1CFD1F6CBD2B00F2D999 /* HomeViewController.swift */,
-				D8B34FE71F767A1100FAB90A /* PictureColletionItem.swift */,
-				D8B34FE81F767A1100FAB90A /* PictureColletionItem.xib */,
 				F24BC8191F723F9F00EEA2D8 /* XCPullRefreshScrollView.swift */,
 				F201720B1F70BD95007F9581 /* HomeCellView.swift */,
+				D800ED161F777845009ECBA9 /* PicsView.swift */,
 				F2C539901F74FC3F0045B6FE /* FridendsCellView.swift */,
 				F20172071F6FB13C007F9581 /* HomeStatusView.swift */,
 				F20172091F6FB153007F9581 /* HomeStatusView.xib */,
@@ -222,7 +219,6 @@
 			files = (
 				D8DD7E661F6DFF770029D27E /* WebLogin.storyboard in Resources */,
 				D87A1CED1F6CB32000F2D999 /* Assets.xcassets in Resources */,
-				D8B34FEA1F767A1100FAB90A /* PictureColletionItem.xib in Resources */,
 				D87A1CF01F6CB32000F2D999 /* Main.storyboard in Resources */,
 				F201720A1F6FB153007F9581 /* HomeStatusView.xib in Resources */,
 			);
@@ -292,13 +288,13 @@
 				D80A7C521F6E3F0E0023B175 /* UserAccount.swift in Sources */,
 				F20172061F6FA3F1007F9581 /* WBStatusUser.swift in Sources */,
 				D87A1CF81F6CB3A200F2D999 /* LoginWindowController.swift in Sources */,
+				D800ED171F777845009ECBA9 /* PicsView.swift in Sources */,
 				F2FBB0961F6F63AA00F18014 /* UAToolManager.swift in Sources */,
 				D8B34FE21F7633EE00FAB90A /* String-Extension.swift in Sources */,
 				D87A1CFA1F6CB3B800F2D999 /* HomeWindowController.swift in Sources */,
 				F24BC81A1F723F9F00EEA2D8 /* XCPullRefreshScrollView.swift in Sources */,
 				D87A1CFC1F6CBD1600F2D999 /* LoginViewController.swift in Sources */,
 				D8DD7E691F6E00020029D27E /* WebLoginViewController.swift in Sources */,
-				D8B34FE91F767A1100FAB90A /* PictureColletionItem.swift in Sources */,
 				D87A1CE91F6CB32000F2D999 /* AppDelegate.swift in Sources */,
 				F20172041F6FA1C6007F9581 /* WBStatus.swift in Sources */,
 				F20172081F6FB13C007F9581 /* HomeStatusView.swift in Sources */,

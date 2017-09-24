@@ -828,12 +828,12 @@ you can see it just for logout your account</string>
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="homeCell" id="HWR-T0-OaU" customClass="HomeCellView" customModule="iFeiBo" customModuleProvider="target">
+                                                        <tableCellView identifier="homeCell" misplaced="YES" id="HWR-T0-OaU" customClass="HomeCellView" customModule="iFeiBo" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="1" width="462" height="206"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0SV-oZ-zQY">
-                                                                    <rect key="frame" x="3" y="155" width="48" height="48"/>
+                                                                    <rect key="frame" x="3" y="150" width="48" height="48"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="48" id="a18-fP-PRP"/>
                                                                         <constraint firstAttribute="width" constant="48" id="i2m-xK-iJD"/>
@@ -841,7 +841,7 @@ you can see it just for logout your account</string>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSAdvanced" id="TXa-Vy-u43"/>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-7E-hgb">
-                                                                    <rect key="frame" x="1" y="130" width="460" height="17"/>
+                                                                    <rect key="frame" x="1" y="125" width="460" height="17"/>
                                                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Multiline Label" id="eie-Kq-Cae">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -860,7 +860,7 @@ you can see it just for logout your account</string>
                                                                     <color key="fillColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
                                                                 </box>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7n-Qe-xjC">
-                                                                    <rect key="frame" x="57" y="184" width="44" height="19"/>
+                                                                    <rect key="frame" x="57" y="179" width="44" height="19"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="UaZ-OV-YcK">
                                                                         <font key="font" metaFont="systemBold" size="15"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -868,7 +868,7 @@ you can see it just for logout your account</string>
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXl-m1-5a6">
-                                                                    <rect key="frame" x="59" y="159" width="37" height="17"/>
+                                                                    <rect key="frame" x="59" y="154" width="37" height="17"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Xyz-Em-PK6">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -876,7 +876,7 @@ you can see it just for logout your account</string>
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewy-EE-FvX">
-                                                                    <rect key="frame" x="112" y="159" width="37" height="17"/>
+                                                                    <rect key="frame" x="112" y="154" width="37" height="17"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="jGY-q1-A4r">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -884,7 +884,7 @@ you can see it just for logout your account</string>
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MTj-O9-K4e">
-                                                                    <rect key="frame" x="114" y="187" width="14" height="14"/>
+                                                                    <rect key="frame" x="114" y="182" width="14" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="14" id="Gbd-b6-4Yg"/>
                                                                         <constraint firstAttribute="height" constant="14" id="xpn-fj-Yuc"/>
@@ -892,7 +892,7 @@ you can see it just for logout your account</string>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="h4F-gA-pca"/>
                                                                 </imageView>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wbX-nf-zbk">
-                                                                    <rect key="frame" x="34" y="155" width="17" height="17"/>
+                                                                    <rect key="frame" x="34" y="150" width="17" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="17" id="eFG-oh-1r6"/>
                                                                         <constraint firstAttribute="height" constant="17" id="ib8-GK-Il3"/>
@@ -910,55 +910,33 @@ you can see it just for logout your account</string>
                                                                     </constraints>
                                                                     <color key="fillColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </box>
-                                                                <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="fBn-zC-ePU">
-                                                                    <rect key="frame" x="3" y="56" width="204" height="66"/>
-                                                                    <clipView key="contentView" drawsBackground="NO" id="NnH-3s-vEn">
-                                                                        <rect key="frame" x="1" y="1" width="202" height="64"/>
-                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                        <subviews>
-                                                                            <collectionView id="n93-c7-mNk">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="202" height="64"/>
-                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                                <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="wgm-YJ-VWN">
-                                                                                    <size key="itemSize" width="50" height="50"/>
-                                                                                </collectionViewFlowLayout>
-                                                                                <color key="primaryBackgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            </collectionView>
-                                                                        </subviews>
-                                                                    </clipView>
+                                                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="Nav-pA-LP8" customClass="PicsView" customModule="iFeiBo" customModuleProvider="target">
+                                                                    <rect key="frame" x="3" y="56" width="184" height="59"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="204" id="5Iq-fb-inG"/>
-                                                                        <constraint firstAttribute="height" constant="66" id="KQV-Xh-7um"/>
+                                                                        <constraint firstAttribute="height" constant="59" id="Jpf-db-kI8"/>
+                                                                        <constraint firstAttribute="width" constant="184" id="hfo-d0-3EE"/>
                                                                     </constraints>
-                                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="N7I-b1-JUd">
-                                                                        <rect key="frame" x="-100" y="-100" width="202" height="16"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                    </scroller>
-                                                                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ogt-MO-hI2">
-                                                                        <rect key="frame" x="-100" y="-100" width="16" height="64"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                    </scroller>
-                                                                </scrollView>
+                                                                </customView>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="Fq3-0y-sv9" firstAttribute="top" secondItem="1u8-St-Lgc" secondAttribute="bottom" id="0o6-YR-pO7"/>
                                                                 <constraint firstItem="DXl-m1-5a6" firstAttribute="leading" secondItem="0SV-oZ-zQY" secondAttribute="trailing" constant="10" id="5cA-z5-OMv"/>
                                                                 <constraint firstItem="Ewy-EE-FvX" firstAttribute="top" secondItem="DXl-m1-5a6" secondAttribute="top" id="7Sa-J1-NNV"/>
                                                                 <constraint firstItem="wbX-nf-zbk" firstAttribute="trailing" secondItem="0SV-oZ-zQY" secondAttribute="trailing" id="85m-9F-dDs"/>
+                                                                <constraint firstItem="Nav-pA-LP8" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="3" id="8Dc-t6-XwZ"/>
                                                                 <constraint firstAttribute="trailing" secondItem="J0x-7E-hgb" secondAttribute="trailing" constant="3" id="9Wh-ej-hzc"/>
                                                                 <constraint firstItem="0SV-oZ-zQY" firstAttribute="top" secondItem="HWR-T0-OaU" secondAttribute="top" constant="3" id="A8T-FU-VdN"/>
                                                                 <constraint firstItem="0SV-oZ-zQY" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="3" id="EBi-Bk-Z7s"/>
-                                                                <constraint firstItem="fBn-zC-ePU" firstAttribute="top" secondItem="J0x-7E-hgb" secondAttribute="bottom" constant="8" id="Hvn-bE-9ty"/>
+                                                                <constraint firstItem="Nav-pA-LP8" firstAttribute="top" secondItem="J0x-7E-hgb" secondAttribute="bottom" priority="900" constant="10" id="HRc-2W-2yj"/>
                                                                 <constraint firstItem="MTj-O9-K4e" firstAttribute="leading" secondItem="x7n-Qe-xjC" secondAttribute="trailing" constant="15" id="IJy-7C-JdT"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Fq3-0y-sv9" secondAttribute="trailing" id="J5l-8e-Dl3"/>
                                                                 <constraint firstItem="1u8-St-Lgc" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" id="O0f-NG-cW8"/>
-                                                                <constraint firstItem="fBn-zC-ePU" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="3" id="OXV-MJ-daC"/>
                                                                 <constraint firstItem="DXl-m1-5a6" firstAttribute="top" secondItem="x7n-Qe-xjC" secondAttribute="bottom" constant="8" id="Opb-qT-jAh"/>
                                                                 <constraint firstItem="Fq3-0y-sv9" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" id="RJG-x7-h2x"/>
                                                                 <constraint firstItem="MTj-O9-K4e" firstAttribute="centerY" secondItem="x7n-Qe-xjC" secondAttribute="centerY" id="bkr-Is-kva"/>
                                                                 <constraint firstItem="x7n-Qe-xjC" firstAttribute="top" secondItem="HWR-T0-OaU" secondAttribute="top" constant="3" id="bri-rm-gUd"/>
                                                                 <constraint firstItem="J0x-7E-hgb" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="3" id="cdi-qC-RAM"/>
-                                                                <constraint firstItem="1u8-St-Lgc" firstAttribute="top" secondItem="fBn-zC-ePU" secondAttribute="bottom" constant="6" id="daG-1P-Xnm"/>
+                                                                <constraint firstItem="1u8-St-Lgc" firstAttribute="top" secondItem="Nav-pA-LP8" secondAttribute="bottom" priority="900" constant="6" id="fwp-sL-OuX"/>
                                                                 <constraint firstItem="wbX-nf-zbk" firstAttribute="bottom" secondItem="0SV-oZ-zQY" secondAttribute="bottom" id="gGS-CI-OUV"/>
                                                                 <constraint firstItem="Ewy-EE-FvX" firstAttribute="leading" secondItem="DXl-m1-5a6" secondAttribute="trailing" constant="20" id="sXZ-fz-um4"/>
                                                                 <constraint firstItem="x7n-Qe-xjC" firstAttribute="leading" secondItem="0SV-oZ-zQY" secondAttribute="trailing" constant="8" id="vn9-FX-P1r"/>
@@ -968,10 +946,9 @@ you can see it just for logout your account</string>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="headImageView" destination="0SV-oZ-zQY" id="BbN-4B-ifn"/>
-                                                                <outlet property="imgCollectionView" destination="n93-c7-mNk" id="Rl4-JL-4hr"/>
                                                                 <outlet property="nameLabel" destination="x7n-Qe-xjC" id="90B-e9-hfq"/>
-                                                                <outlet property="picHeightCons" destination="KQV-Xh-7um" id="Ad7-hR-0PH"/>
-                                                                <outlet property="picWidthCons" destination="5Iq-fb-inG" id="8aB-m1-OoY"/>
+                                                                <outlet property="picHeightCons" destination="Jpf-db-kI8" id="4Nw-ao-TgK"/>
+                                                                <outlet property="picWidthCons" destination="hfo-d0-3EE" id="Ul9-X1-PvJ"/>
                                                                 <outlet property="rankImageView" destination="MTj-O9-K4e" id="5dw-1v-amS"/>
                                                                 <outlet property="sourceLabel" destination="Ewy-EE-FvX" id="DR0-Bu-eBI"/>
                                                                 <outlet property="textLabel" destination="J0x-7E-hgb" id="wJe-Ts-w8Q"/>
