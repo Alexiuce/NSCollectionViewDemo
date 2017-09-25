@@ -18,8 +18,7 @@ class LoginViewController: NSViewController {
     /** start login  */
     @IBAction func startLogin(_ sender: NSButton) {
        
-        UserDefaults.standard.set(true, forKey: kFBLoginStatusKey)
-        UserDefaults.standard.synchronize()
+
         let homeWindowController = storyboard?.instantiateController(withIdentifier: kFBHomeControllerID) as! HomeWindowController
         
         homeWindowController.showWindow(nil)

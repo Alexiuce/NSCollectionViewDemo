@@ -39,7 +39,7 @@ class LoginWindowController: NSWindowController {
 extension LoginWindowController : NSWindowDelegate{
     func windowWillClose(_ notification: Notification) {
         
-        if UserDefaults.standard.bool(forKey: kFBLoginStatusKey) {
+        if UAToolManager.defaultManager.isLogin {
             return
         }
         

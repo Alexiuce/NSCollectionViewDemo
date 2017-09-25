@@ -22,6 +22,11 @@ class HTTPManager {
         
         // 3. send https request
         Alamofire.request(statusURL, method: HTTPMethod.get, parameters:para ).responseJSON { (response) in
+           
+            if let error = response.error{
+                XCPring(error.localizedDescription)
+            }
+            
             guard let dict = response.value as? [String : Any] else {return}
             // 3. callback closure
             finished(dict)

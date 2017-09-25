@@ -9,8 +9,6 @@
 import Foundation
 
 
-let kFBLoginStatusKey = "loginStatusKey"
-
 let kFBHomeControllerID = "Home"
 let kFBLoginConttollerID = "Login"
 let kFBStatusLoginItemID = "LoginItem"

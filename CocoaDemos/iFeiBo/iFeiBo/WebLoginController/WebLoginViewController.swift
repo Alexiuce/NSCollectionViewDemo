@@ -29,10 +29,10 @@ class WebLoginViewController: NSViewController {
                 guard let data =  try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.mutableLeaves)  as? [String : Any] else {
                     return
                 }
+                
                 let account = UserAccount(dict: data)
                 _ = UAToolManager.defaultManager.saveUserAccount(account)
-                UserDefaults.standard.set(true, forKey: kFBLoginStatusKey)
-                UserDefaults.standard.synchronize()
+                
                 let storyboard = NSStoryboard(name: "Main", bundle: nil)
                 let homeWindowController = storyboard.instantiateController(withIdentifier: kFBHomeControllerID) as! HomeWindowController
                 
