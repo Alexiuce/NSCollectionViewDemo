@@ -23,6 +23,7 @@ class HomeCellView: NSTableCellView {
     
     @IBOutlet weak var rankImageView: NSImageView!  // 认证
   
+    @IBOutlet weak var retweedText: NSTextField!
     @IBOutlet weak var pictureView: PicsView!
     
     @IBOutlet weak var picWidthCons: NSLayoutConstraint!            // 配图宽度约束
@@ -49,7 +50,15 @@ class HomeCellView: NSTableCellView {
             default:
                 vipImageView.image = nil
             }
-            pictureView.picUrls = status.picURL
+           
+            if let retweetedText = status.retweeted_status?.text,let username = status.retweeted_status?.user?.name {
+                retweedText.stringValue = "@\(username):" + retweetedText
+            }else{
+                retweedText.stringValue = ""
+            }
+           
+          
+            pictureView.picUrls = (status.retweeted_status?.picURL != nil && status.retweeted_status!.picURL.count > 0) ?  (status.retweeted_status?.picURL)! : status.picURL
             picWidthCons.constant = pictureView.caculateSize.width
             picHeightCons.constant = pictureView.caculateSize.height
         }
