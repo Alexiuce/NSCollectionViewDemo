@@ -832,6 +832,14 @@ you can see it just for logout your account</string>
                                                             <rect key="frame" x="1" y="1" width="462" height="254"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
+                                                                <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="jhq-mb-qWf">
+                                                                    <rect key="frame" x="0.0" y="50" width="462" height="99"/>
+                                                                    <view key="contentView" id="LCw-qi-oJ1">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="462" height="99"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    </view>
+                                                                    <color key="fillColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </box>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0SV-oZ-zQY">
                                                                     <rect key="frame" x="3" y="182" width="48" height="48"/>
                                                                     <constraints>
@@ -939,23 +947,28 @@ you can see it just for logout your account</string>
                                                                 <constraint firstItem="MTj-O9-K4e" firstAttribute="leading" secondItem="x7n-Qe-xjC" secondAttribute="trailing" constant="15" id="IJy-7C-JdT"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Fq3-0y-sv9" secondAttribute="trailing" id="J5l-8e-Dl3"/>
                                                                 <constraint firstItem="1u8-St-Lgc" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" id="O0f-NG-cW8"/>
+                                                                <constraint firstItem="jhq-mb-qWf" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" id="O9A-ag-mpE"/>
                                                                 <constraint firstItem="DXl-m1-5a6" firstAttribute="top" secondItem="x7n-Qe-xjC" secondAttribute="bottom" constant="8" id="Opb-qT-jAh"/>
                                                                 <constraint firstItem="Nav-pA-LP8" firstAttribute="top" secondItem="5gQ-uN-ESC" secondAttribute="bottom" constant="10" id="P4R-YL-XJJ"/>
                                                                 <constraint firstItem="Fq3-0y-sv9" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" id="RJG-x7-h2x"/>
                                                                 <constraint firstItem="5gQ-uN-ESC" firstAttribute="top" secondItem="J0x-7E-hgb" secondAttribute="bottom" constant="15" id="TXq-lR-8hd"/>
                                                                 <constraint firstItem="MTj-O9-K4e" firstAttribute="centerY" secondItem="x7n-Qe-xjC" secondAttribute="centerY" id="bkr-Is-kva"/>
                                                                 <constraint firstItem="x7n-Qe-xjC" firstAttribute="top" secondItem="HWR-T0-OaU" secondAttribute="top" constant="3" id="bri-rm-gUd"/>
+                                                                <constraint firstItem="jhq-mb-qWf" firstAttribute="top" secondItem="J0x-7E-hgb" secondAttribute="bottom" constant="8" id="btv-KU-Mfp"/>
                                                                 <constraint firstItem="J0x-7E-hgb" firstAttribute="leading" secondItem="HWR-T0-OaU" secondAttribute="leading" constant="3" id="cdi-qC-RAM"/>
+                                                                <constraint firstAttribute="trailing" secondItem="jhq-mb-qWf" secondAttribute="trailing" id="dPD-c2-k6B"/>
                                                                 <constraint firstItem="1u8-St-Lgc" firstAttribute="top" secondItem="Nav-pA-LP8" secondAttribute="bottom" priority="900" constant="6" id="fwp-sL-OuX"/>
                                                                 <constraint firstItem="wbX-nf-zbk" firstAttribute="bottom" secondItem="0SV-oZ-zQY" secondAttribute="bottom" id="gGS-CI-OUV"/>
                                                                 <constraint firstItem="5gQ-uN-ESC" firstAttribute="trailing" secondItem="J0x-7E-hgb" secondAttribute="trailing" id="lyN-FM-aCT"/>
                                                                 <constraint firstItem="Ewy-EE-FvX" firstAttribute="leading" secondItem="DXl-m1-5a6" secondAttribute="trailing" constant="20" id="sXZ-fz-um4"/>
+                                                                <constraint firstItem="1u8-St-Lgc" firstAttribute="top" secondItem="jhq-mb-qWf" secondAttribute="bottom" id="ujK-Ov-9VK"/>
                                                                 <constraint firstItem="x7n-Qe-xjC" firstAttribute="leading" secondItem="0SV-oZ-zQY" secondAttribute="trailing" constant="8" id="vn9-FX-P1r"/>
                                                                 <constraint firstAttribute="trailing" secondItem="1u8-St-Lgc" secondAttribute="trailing" id="wMW-xD-Ved"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Fq3-0y-sv9" secondAttribute="bottom" id="y9y-Tl-Gho"/>
                                                                 <constraint firstItem="J0x-7E-hgb" firstAttribute="top" secondItem="0SV-oZ-zQY" secondAttribute="bottom" constant="8" id="zEA-xu-Kcz"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="backgroundView" destination="jhq-mb-qWf" id="CvS-yn-Bc0"/>
                                                                 <outlet property="headImageView" destination="0SV-oZ-zQY" id="BbN-4B-ifn"/>
                                                                 <outlet property="nameLabel" destination="x7n-Qe-xjC" id="90B-e9-hfq"/>
                                                                 <outlet property="picHeightCons" destination="Jpf-db-kI8" id="4Nw-ao-TgK"/>

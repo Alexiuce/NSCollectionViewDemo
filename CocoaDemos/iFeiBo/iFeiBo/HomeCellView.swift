@@ -10,6 +10,7 @@ import Cocoa
 
 class HomeCellView: NSTableCellView {
 
+    @IBOutlet weak var backgroundView: NSBox!
     @IBOutlet weak var headImageView: NSImageView!  // 头像
     
     @IBOutlet weak var textLabel: NSTextField!      // 微博正文
@@ -52,9 +53,11 @@ class HomeCellView: NSTableCellView {
             }
            
             if let retweetedText = status.retweeted_status?.text,let username = status.retweeted_status?.user?.name {
-                retweedText.stringValue = "@\(username):" + retweetedText
+                retweedText.stringValue = "@\(username): " + retweetedText
+                backgroundView.isHidden = false;
             }else{
                 retweedText.stringValue = ""
+                backgroundView.isHidden = true
             }
            
           
