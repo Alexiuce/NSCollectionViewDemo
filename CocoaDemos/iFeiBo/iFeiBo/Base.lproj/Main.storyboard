@@ -973,9 +973,11 @@ you can see it just for logout your account</string>
                                                                 <outlet property="nameLabel" destination="x7n-Qe-xjC" id="90B-e9-hfq"/>
                                                                 <outlet property="picHeightCons" destination="Jpf-db-kI8" id="4Nw-ao-TgK"/>
                                                                 <outlet property="picWidthCons" destination="hfo-d0-3EE" id="Ul9-X1-PvJ"/>
+                                                                <outlet property="picsTopCons" destination="P4R-YL-XJJ" id="SUy-dZ-VoT"/>
                                                                 <outlet property="pictureView" destination="Nav-pA-LP8" id="kWx-kO-6SC"/>
                                                                 <outlet property="rankImageView" destination="MTj-O9-K4e" id="5dw-1v-amS"/>
                                                                 <outlet property="retweedText" destination="5gQ-uN-ESC" id="6cC-4d-gI0"/>
+                                                                <outlet property="retweedTopCons" destination="TXq-lR-8hd" id="3dx-xq-HTP"/>
                                                                 <outlet property="sourceLabel" destination="Ewy-EE-FvX" id="DR0-Bu-eBI"/>
                                                                 <outlet property="textLabel" destination="J0x-7E-hgb" id="wJe-Ts-w8Q"/>
                                                                 <outlet property="timeLabel" destination="DXl-m1-5a6" id="pAp-7T-t2a"/>

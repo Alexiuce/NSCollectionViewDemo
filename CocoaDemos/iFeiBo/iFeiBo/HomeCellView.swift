@@ -30,7 +30,9 @@ class HomeCellView: NSTableCellView {
     @IBOutlet weak var picWidthCons: NSLayoutConstraint!            // 配图宽度约束
     @IBOutlet weak var picHeightCons: NSLayoutConstraint!           // 配图高度约束
     
+    @IBOutlet weak var picsTopCons: NSLayoutConstraint!             // 配图的顶部约束
     
+    @IBOutlet weak var retweedTopCons: NSLayoutConstraint!          // 转发正文的顶部约束
     var status : WBStatus? {
         didSet{
             guard let status = status else { return  }
@@ -55,15 +57,25 @@ class HomeCellView: NSTableCellView {
             if let retweetedText = status.retweeted_status?.text,let username = status.retweeted_status?.user?.name {
                 retweedText.stringValue = "@\(username): " + retweetedText
                 backgroundView.isHidden = false;
+                retweedTopCons.constant = 15
             }else{
                 retweedText.stringValue = ""
                 backgroundView.isHidden = true
+                retweedTopCons.constant = 0
             }
            
           
-            pictureView.picUrls = (status.retweeted_status?.picURL != nil && status.retweeted_status!.picURL.count > 0) ?  (status.retweeted_status?.picURL)! : status.picURL
+            if  (status.retweeted_status?.picURL != nil && status.retweeted_status!.picURL.count > 0) {
+                pictureView.picUrls =  (status.retweeted_status?.picURL)!
+                picsTopCons.constant = 10
+            }else{
+                pictureView.picUrls = status.picURL
+                picsTopCons.constant = retweedTopCons.constant
+            }
+        
             picWidthCons.constant = pictureView.caculateSize.width
             picHeightCons.constant = pictureView.caculateSize.height
+//            picsTopCons.constant = picHeightCons.constant == 0 ? 0 : 10
         }
     }
     
