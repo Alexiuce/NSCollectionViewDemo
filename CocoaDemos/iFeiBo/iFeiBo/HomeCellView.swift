@@ -81,10 +81,12 @@ class HomeCellView: NSTableCellView {
             layer?.backgroundColor = backgroundStyle == .dark ? NSColor.red.cgColor : NSColor.clear.cgColor
         }
    
-    }    
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         wantsLayer = true
+        headImageView.layer?.cornerRadius = 24
+        headImageView.layer?.masksToBounds = true
    
     }
 }
