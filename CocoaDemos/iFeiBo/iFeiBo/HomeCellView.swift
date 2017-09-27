@@ -63,8 +63,6 @@ class HomeCellView: NSTableCellView {
                 backgroundView.isHidden = true
                 retweedTopCons.constant = 0
             }
-           
-          
             if  (status.retweeted_status?.picURL != nil && status.retweeted_status!.picURL.count > 0) {
                 pictureView.picUrls =  (status.retweeted_status?.picURL)!
                 picsTopCons.constant = 10
@@ -75,27 +73,15 @@ class HomeCellView: NSTableCellView {
         
             picWidthCons.constant = pictureView.caculateSize.width
             picHeightCons.constant = pictureView.caculateSize.height
-//            picsTopCons.constant = picHeightCons.constant == 0 ? 0 : 10
         }
     }
     
     override var backgroundStyle: NSBackgroundStyle{
         didSet{
-            if backgroundStyle == .dark {
-                layer?.backgroundColor = NSColor.red.cgColor
-            }else{
-                layer?.backgroundColor = NSColor.clear.cgColor
-            }
-    
+            layer?.backgroundColor = backgroundStyle == .dark ? NSColor.red.cgColor : NSColor.clear.cgColor
         }
    
-    }
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-
-        // Drawing code here.
-    }
-    
+    }    
     override func awakeFromNib() {
         super.awakeFromNib()
         wantsLayer = true
