@@ -41,7 +41,7 @@ class PicsView: NSView {
                 let imageView = NSImageView(frame: NSMakeRect(0, 0, kPicuterWH, kPicuterWH))
                 imageView.imageAlignment = .alignCenter
                 imageView.imageScaling = .scaleNone
-                
+                imageView.animates = true
                 
                 let pointX = CGFloat(i % itemInRow) * (kPicuterWH + kMargin)
                 let pointY = CGFloat(i / itemInRow) * (kPicuterWH + kMargin)
@@ -49,6 +49,8 @@ class PicsView: NSView {
                 addSubview(imageView)
                
                 imageView.kf.setImage(with: picUrls[i])
+                let clickGesture = NSClickGestureRecognizer(target: self, action: #selector(handleImageViewClick(_:)))
+                imageView.addGestureRecognizer(clickGesture)
             }
         }
     }
@@ -63,4 +65,13 @@ class PicsView: NSView {
         // Drawing code here.
     }
     
+}
+
+// MARK: - custom methon
+
+extension PicsView{
+    func handleImageViewClick(_ gesture : NSGestureRecognizer)  {
+        
+        XCPring("click image view \(gesture.view!)")
+    }
 }
