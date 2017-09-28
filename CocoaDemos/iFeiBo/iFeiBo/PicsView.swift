@@ -72,6 +72,7 @@ class PicsView: NSView {
 extension PicsView{
     func handleImageViewClick(_ gesture : NSGestureRecognizer)  {
         
+        
         XCPring("click image view \(gesture.view!)")
     }
 }

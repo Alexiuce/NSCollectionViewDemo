@@ -12,13 +12,17 @@ import Foundation
 extension String{
     
     
+
+    
+    
+    /** 获取微博文本的A标签内容 */
     func getTagAHtmlText() -> String {
         guard self != "" else { return "" }
         let alocation = (self as NSString).range(of: ">").location + 1
         let aLength = (self as NSString).range(of: "</").location - alocation
         return "来自" + (self as NSString).substring(with: NSMakeRange(alocation, aLength))
     }
-    
+    /** 转换时间表达方法 */
     func convertWBTime() -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = "EEE MM dd HH:mm:ss Z yyyy"
