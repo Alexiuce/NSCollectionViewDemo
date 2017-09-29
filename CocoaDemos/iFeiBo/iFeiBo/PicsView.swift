@@ -65,6 +65,11 @@ class PicsView: NSView {
         // Drawing code here.
     }
     
+    override var alignmentRectInsets: EdgeInsets{
+        let bottomMargin : CGFloat = picUrls.count > 0 ? -10 : 0
+        return NSEdgeInsetsMake(0, 0,bottomMargin, 0)
+    }
+    
 }
 
 // MARK: - custom methon

@@ -11,10 +11,6 @@ import Foundation
 
 extension String{
     
-    
-
-    
-    
     /** 获取微博文本的A标签内容 */
     func getTagAHtmlText() -> String {
         guard self != "" else { return "" }
