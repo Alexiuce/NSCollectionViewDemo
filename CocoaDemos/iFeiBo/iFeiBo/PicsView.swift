@@ -40,7 +40,7 @@ class PicsView: NSView {
             for i in 0..<imgCount {
                 let imageView = NSImageView(frame: NSMakeRect(0, 0, kPicuterWH, kPicuterWH))
                 imageView.imageAlignment = .alignCenter
-                imageView.imageScaling = .scaleProportionallyDown
+                imageView.imageScaling = .scaleNone
                 imageView.imageFrameStyle = .photo
                 imageView.animates = true
                 
