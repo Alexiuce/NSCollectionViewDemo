@@ -41,7 +41,6 @@ class PicsView: NSView {
                 let imageView = NSImageView(frame: NSMakeRect(0, 0, kPicuterWH, kPicuterWH))
                 imageView.imageAlignment = .alignCenter
                 imageView.imageScaling = .scaleNone
-                imageView.imageFrameStyle = .photo
                 imageView.animates = true
                 
                 let pointX = CGFloat(i % itemInRow) * (kPicuterWH + kMargin)
