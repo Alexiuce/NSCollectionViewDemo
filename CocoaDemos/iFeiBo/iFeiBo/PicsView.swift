@@ -76,7 +76,10 @@ class PicsView: NSView {
 
 extension PicsView{
     func handleImageViewClick(_ gesture : NSGestureRecognizer)  {
+       guard let  imageView = gesture.view as? NSImageView  else { return  }
+    
         
+        imageView.layer?.transform = CATransform3DMakeScale(1.5, 1.5, 1)
         
         XCPring("click image view \(gesture.view!)")
     }
