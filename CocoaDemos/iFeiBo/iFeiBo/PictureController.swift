@@ -10,9 +10,14 @@ import Cocoa
 
 class PictureController: NSViewController {
 
+    var picture : NSImage?
+    
+    @IBOutlet weak var imageView: NSImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        imageView.image = picture
     }
     
 }

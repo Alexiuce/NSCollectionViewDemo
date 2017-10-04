@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PictureController" customModule="iFeiBo" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="o7X-Ea-v1h" id="at7-PM-xqv"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -17,15 +18,17 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="prS-D5-wHI">
-                    <rect key="frame" x="14" y="230" width="81" height="32"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZXb-Pn-tjM">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o7X-Ea-v1h">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="TyD-Cf-Y4E"/>
+                </imageView>
             </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="o7X-Ea-v1h" secondAttribute="bottom" id="0b9-Pt-GaP"/>
+                <constraint firstAttribute="trailing" secondItem="o7X-Ea-v1h" secondAttribute="trailing" id="fhR-Nh-fSw"/>
+                <constraint firstItem="o7X-Ea-v1h" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="tSH-il-Kdt"/>
+                <constraint firstItem="o7X-Ea-v1h" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="tcy-9U-kn8"/>
+            </constraints>
         </customView>
     </objects>
 </document>

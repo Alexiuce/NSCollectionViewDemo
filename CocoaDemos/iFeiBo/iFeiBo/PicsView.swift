@@ -81,6 +81,8 @@ extension PicsView{
         
         let picsVC = PictureController()
         
+    
+        picsVC.picture = imageView.image
         
         controller.presentViewController(picsVC, asPopoverRelativeTo: imageView.bounds, of: imageView, preferredEdge: .maxX, behavior: .transient)
       
