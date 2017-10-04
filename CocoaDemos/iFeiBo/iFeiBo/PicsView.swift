@@ -76,11 +76,13 @@ class PicsView: NSView {
 
 extension PicsView{
     func handleImageViewClick(_ gesture : NSGestureRecognizer)  {
-       guard let  imageView = gesture.view as? NSImageView  else { return  }
-    
+        guard let controller = window?.contentViewController else { return  }
+        guard let  imageView = gesture.view as? NSImageView  else { return  }
         
-        imageView.layer?.transform = CATransform3DMakeScale(1.5, 1.5, 1)
+        let picsVC = PictureController()
         
-        XCPring("click image view \(gesture.view!)")
+        
+        controller.presentViewController(picsVC, asPopoverRelativeTo: imageView.bounds, of: imageView, preferredEdge: .maxX, behavior: .transient)
+      
     }
 }
