@@ -11,13 +11,15 @@ import Cocoa
 class PictureController: NSViewController {
 
     var picture : NSImage?
+    var pictureURL : URL?
     
     @IBOutlet weak var imageView: NSImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        imageView.image = picture
+        guard let picURL = pictureURL else { return  }
+        imageView.kf.setImage(with: picURL)
     }
     
 }

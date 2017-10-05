@@ -30,7 +30,8 @@ class WBStatus: NSObject {
             guard let urls = pic_urls else {return}
             for dict in urls {
                 let urlText = dict["thumbnail_pic"]!
-                let url = URL(string: urlText)!
+                let urlMiddle = (urlText as NSString).replacingOccurrences(of: "thumbnail", with: "bmiddle")
+                let url = URL(string: urlMiddle)!
                 picURL.append(url)
             }
             

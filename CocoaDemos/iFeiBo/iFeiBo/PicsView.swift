@@ -48,6 +48,8 @@ class PicsView: NSView {
                 imageView.setFrameOrigin(NSMakePoint(pointX, pointY))
                 addSubview(imageView)
                
+                
+                
                 imageView.kf.setImage(with: picUrls[i])
                 let clickGesture = NSClickGestureRecognizer(target: self, action: #selector(handleImageViewClick(_:)))
                 imageView.addGestureRecognizer(clickGesture)
@@ -78,12 +80,13 @@ extension PicsView{
     func handleImageViewClick(_ gesture : NSGestureRecognizer)  {
         guard let controller = window?.contentViewController else { return  }
         guard let  imageView = gesture.view as? NSImageView  else { return  }
-        
+        guard let imgIndex =  subviews.index(of: imageView) else { return  }
+        let picURL = picUrls[imgIndex]
+        XCPring(picURL.absoluteString)
         let picsVC = PictureController()
         
-    
-        picsVC.picture = imageView.image
-        
+        picsVC.pictureURL = picURL
+//        picsVC.picture = imageView.image
         controller.presentViewController(picsVC, asPopoverRelativeTo: imageView.bounds, of: imageView, preferredEdge: .maxX, behavior: .transient)
       
     }
