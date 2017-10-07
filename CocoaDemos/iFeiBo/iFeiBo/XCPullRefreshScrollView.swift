@@ -19,6 +19,10 @@ class XCPullRefreshScrollView: NSScrollView {
     fileprivate var isRefreshing = false                //
     
     
+    fileprivate var footerView : NSView?                // 底部视图
+    fileprivate var isFooterRefreshing = false          // 是否在刷新
+    
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
     }
