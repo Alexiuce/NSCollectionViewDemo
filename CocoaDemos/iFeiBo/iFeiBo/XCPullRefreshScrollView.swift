@@ -60,12 +60,23 @@ extension XCPullRefreshScrollView{
     
     fileprivate func setupFooter(){
         if footerView != nil {return}
-        let footerRect = contentView.frame
-        footerView = NSView(frame: NSMakeRect(0, NSMaxY(footerRect), NSWidth(footerRect), footerHeight))
+        
+        footerView = NSView(frame: NSZeroRect)
         footerView?.wantsLayer = true
         contentView.addSubview(footerView!)
         footerView?.layer?.backgroundColor = NSColor.green.cgColor
-        footerView?.autoresizingMask = [.viewWidthSizable]
+        footerView?.translatesAutoresizingMaskIntoConstraints = false
+        guard let docView = documentView else { return  }
+        
+        let footerCons = [
+            footerView!.topAnchor.constraint(equalTo: docView.bottomAnchor, constant: 0),
+            footerView!.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0),
+            footerView!.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0),
+            footerView!.heightAnchor.constraint(equalToConstant: footerHeight)
+        ]
+//        footerView?.autoresizingMask = [.viewWidthSizable]
+        NSLayoutConstraint.activate(footerCons)
+        
     }
 }
 
