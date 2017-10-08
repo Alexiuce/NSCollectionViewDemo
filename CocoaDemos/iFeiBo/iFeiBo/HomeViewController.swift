@@ -30,12 +30,17 @@ class HomeViewController: NSViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(handleTableViewResize), name: .NSViewFrameDidChange, object: homeTableView)
         
+        // 下拉刷新
         scrollView.xc_headerRefreshTarget(self, action: #selector(reloadHeader))
+        // 上拉加载更多
+        scrollView.xc_footerRefreshTarget(nil, action: nil)
         
         HTTPManager.getWBStatus { (dict) in
             self.statuses = WBStatus.statusesFromDicts(dict?["statuses"] as! [[String : Any]])
             self.homeTableView.reloadData()
         }
+        
+        
     }
     
     func handleTableViewResize(){
