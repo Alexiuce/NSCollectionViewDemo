@@ -10,9 +10,10 @@ import Cocoa
 
 class HomeCellView: NSTableCellView {
 
+    @IBOutlet weak var backgroundView: NSBox!
     @IBOutlet weak var headImageView: NSImageView!  // 头像
     
-    @IBOutlet weak var textLabel: NSTextField!      // 微博正文
+    @IBOutlet weak var textLabel: WBTextField!      // 微博正文
     
     @IBOutlet weak var nameLabel: NSTextField!      // 名称
 
@@ -23,12 +24,15 @@ class HomeCellView: NSTableCellView {
     
     @IBOutlet weak var rankImageView: NSImageView!  // 认证
   
+    @IBOutlet weak var retweedText: WBTextField!
     @IBOutlet weak var pictureView: PicsView!
     
     @IBOutlet weak var picWidthCons: NSLayoutConstraint!            // 配图宽度约束
     @IBOutlet weak var picHeightCons: NSLayoutConstraint!           // 配图高度约束
     
+    @IBOutlet weak var picsTopCons: NSLayoutConstraint!             // 配图的顶部约束
     
+    @IBOutlet weak var retweedTopCons: NSLayoutConstraint!          // 转发正文的顶部约束
     var status : WBStatus? {
         didSet{
             guard let status = status else { return  }
@@ -49,7 +53,24 @@ class HomeCellView: NSTableCellView {
             default:
                 vipImageView.image = nil
             }
-            pictureView.picUrls = status.picURL
+           
+            if let retweetedText = status.retweeted_status?.text,let username = status.retweeted_status?.user?.name {
+                retweedText.stringValue = "@\(username): " + retweetedText
+                backgroundView.isHidden = false;
+//                retweedTopCons.constant = 15
+            }else{
+                retweedText.stringValue = ""
+                backgroundView.isHidden = true
+//                retweedTopCons.constant = 0
+            }
+            if  (status.retweeted_status?.picURL != nil && status.retweeted_status!.picURL.count > 0) {
+                pictureView.picUrls =  (status.retweeted_status?.picURL)!
+//                picsTopCons.constant = 10
+            }else{
+                pictureView.picUrls = status.picURL
+//                picsTopCons.constant = retweedTopCons.constant
+            }
+        
             picWidthCons.constant = pictureView.caculateSize.width
             picHeightCons.constant = pictureView.caculateSize.height
         }
@@ -57,24 +78,15 @@ class HomeCellView: NSTableCellView {
     
     override var backgroundStyle: NSBackgroundStyle{
         didSet{
-            if backgroundStyle == .dark {
-                layer?.backgroundColor = NSColor.red.cgColor
-            }else{
-                layer?.backgroundColor = NSColor.clear.cgColor
-            }
-    
+            layer?.backgroundColor = backgroundStyle == .dark ? NSColor.red.cgColor : NSColor.clear.cgColor
         }
    
     }
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-
-        // Drawing code here.
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         wantsLayer = true
+        headImageView.layer?.cornerRadius = 24
+        headImageView.layer?.masksToBounds = true
    
     }
 }

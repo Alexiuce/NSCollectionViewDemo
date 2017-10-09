@@ -19,6 +19,13 @@ class XCPullRefreshScrollView: NSScrollView {
     fileprivate var isRefreshing = false                //
     
     
+    fileprivate var footerView : NSView?                // 底部视图
+    fileprivate var isFooterRefreshing = false          // 是否在刷新
+    fileprivate weak var xc_footerTarget : AnyObject?
+    fileprivate var xc_footerAction : Selector?
+    fileprivate var footerHeight : CGFloat = 44
+    
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
     }
@@ -48,6 +55,27 @@ extension XCPullRefreshScrollView{
         contentView.addSubview(headerView!)
         headerView?.layer?.backgroundColor = NSColor.red.cgColor
         headerView?.autoresizingMask = [.viewWidthSizable]
+        
+    }
+    
+    fileprivate func setupFooter(){
+        if footerView != nil {return}
+        
+        footerView = NSView(frame: NSZeroRect)
+        footerView?.wantsLayer = true
+        contentView.addSubview(footerView!)
+        footerView?.layer?.backgroundColor = NSColor.green.cgColor
+        footerView?.translatesAutoresizingMaskIntoConstraints = false
+        guard let docView = documentView else { return  }
+        
+        let footerCons = [
+            footerView!.topAnchor.constraint(equalTo: docView.bottomAnchor, constant: 0),
+            footerView!.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0),
+            footerView!.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0),
+            footerView!.heightAnchor.constraint(equalToConstant: footerHeight)
+        ]
+//        footerView?.autoresizingMask = [.viewWidthSizable]
+        NSLayoutConstraint.activate(footerCons)
         
     }
 }
@@ -87,5 +115,10 @@ extension XCPullRefreshScrollView{
         setupHeader()
     }
     
+    func xc_footerRefreshTarget(_ target : AnyObject?, action : Selector? )  {
+        xc_footerAction = action
+        xc_footerTarget = target
+        setupFooter()
+    }
 }
 

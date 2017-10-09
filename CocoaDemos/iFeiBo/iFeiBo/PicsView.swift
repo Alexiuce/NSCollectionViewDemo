@@ -41,14 +41,18 @@ class PicsView: NSView {
                 let imageView = NSImageView(frame: NSMakeRect(0, 0, kPicuterWH, kPicuterWH))
                 imageView.imageAlignment = .alignCenter
                 imageView.imageScaling = .scaleNone
-                
+                imageView.animates = true
                 
                 let pointX = CGFloat(i % itemInRow) * (kPicuterWH + kMargin)
                 let pointY = CGFloat(i / itemInRow) * (kPicuterWH + kMargin)
                 imageView.setFrameOrigin(NSMakePoint(pointX, pointY))
                 addSubview(imageView)
                
+                
+                
                 imageView.kf.setImage(with: picUrls[i])
+                let clickGesture = NSClickGestureRecognizer(target: self, action: #selector(handleImageViewClick(_:)))
+                imageView.addGestureRecognizer(clickGesture)
             }
         }
     }
@@ -63,4 +67,27 @@ class PicsView: NSView {
         // Drawing code here.
     }
     
+    override var alignmentRectInsets: EdgeInsets{
+        let bottomMargin : CGFloat = picUrls.count > 0 ? -10 : 0
+        return NSEdgeInsetsMake(0, 0,bottomMargin, 0)
+    }
+    
+}
+
+// MARK: - custom methon
+
+extension PicsView{
+    func handleImageViewClick(_ gesture : NSGestureRecognizer)  {
+        guard let controller = window?.contentViewController else { return  }
+        guard let  imageView = gesture.view as? NSImageView  else { return  }
+        guard let imgIndex =  subviews.index(of: imageView) else { return  }
+        let picURL = picUrls[imgIndex]
+        XCPring(picURL.absoluteString)
+        let picsVC = PictureController()
+        
+        picsVC.pictureURL = picURL
+//        picsVC.picture = imageView.image
+        controller.presentViewController(picsVC, asPopoverRelativeTo: imageView.bounds, of: imageView, preferredEdge: .maxX, behavior: .transient)
+      
+    }
 }
