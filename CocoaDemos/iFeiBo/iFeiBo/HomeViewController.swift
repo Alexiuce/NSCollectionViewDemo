@@ -33,7 +33,7 @@ class HomeViewController: NSViewController {
         // 下拉刷新
         scrollView.xc_headerRefreshTarget(self, action: #selector(reloadHeader))
         // 上拉加载更多
-        scrollView.xc_footerRefreshTarget(nil, action: nil)
+        scrollView.xc_footerRefreshTarget(self, action: #selector(loadMoreFooter))
         
         HTTPManager.getWBStatus { (dict) in
             self.statuses = WBStatus.statusesFromDicts(dict?["statuses"] as! [[String : Any]])
@@ -123,6 +123,10 @@ extension HomeViewController{
             self.homeTableView.reloadData()
             self.scrollView.stopHeaderRefresh()
         }
+    }
+    
+    func loadMoreFooter()  {
+        XCPring("footer more")
     }
 }
 
