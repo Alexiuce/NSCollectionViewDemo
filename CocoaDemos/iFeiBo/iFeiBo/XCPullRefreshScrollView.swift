@@ -108,6 +108,10 @@ extension XCPullRefreshScrollView{
         
 
     }
+    // 结束底部加载更多
+    func stopFooterLoadMore()  {
+        
+    }
     
     func xc_headerRefreshTarget(_ target: AnyObject? ,action : Selector) {
         xc_action = action
