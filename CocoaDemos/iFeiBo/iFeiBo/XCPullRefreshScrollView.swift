@@ -34,6 +34,10 @@ class XCPullRefreshScrollView: NSScrollView {
     override func scrollWheel(with event: NSEvent) {
         if isRefreshing{return}
         if event.phase == .ended {
+            
+            let currentPoint = event.locationInWindow
+            XCPring("\(currentPoint)")
+            
             if showHeaderView() {
                 startRefreshing()
                 return
