@@ -37,7 +37,7 @@ class XCPullRefreshScrollView: NSScrollView {
             
             let currentPoint = event.locationInWindow
             XCPring("\(currentPoint)")
-            
+            XCPring("\(contentView.frame)")
             if showHeaderView() {
                 startRefreshing()
                 return
